@@ -169,6 +169,28 @@ class TestScrapeTogetherAIModelList:
         # Duplicates should be removed
         assert slugs.count("llama-3-8b") == 1
 
+    def test_parses_slugs_from_next_data(self):
+        """__NEXT_DATA__ slug extraction takes priority over anchor parsing."""
+        html = """
+        <html><head>
+          <script id="__NEXT_DATA__" type="application/json">
+          {"props":{"pageProps":{"models":[
+            {"slug":"kimi-k2-6","name":"Kimi K2.6"},
+            {"slug":"glm-5-1","name":"GLM-5.1"}
+          ]}},"page":"/models"}
+          </script>
+        </head><body></body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            slugs = sync.scrape_together_ai_model_list()
+
+        assert "kimi-k2-6" in slugs
+        assert "glm-5-1" in slugs
+
     def test_returns_empty_list_on_error(self):
         import requests
 
@@ -176,6 +198,175 @@ class TestScrapeTogetherAIModelList:
             slugs = sync.scrape_together_ai_model_list()
 
         assert slugs == []
+
+
+class TestExtractNextData:
+    def test_extracts_json(self):
+        html = """
+        <html><head>
+          <script id="__NEXT_DATA__" type="application/json">{"buildId":"abc","props":{}}</script>
+        </head><body></body></html>
+        """
+        data = sync._extract_next_data(html)
+        assert data is not None
+        assert data["buildId"] == "abc"
+
+    def test_returns_none_when_absent(self):
+        html = "<html><body><p>No Next.js here</p></body></html>"
+        assert sync._extract_next_data(html) is None
+
+    def test_returns_none_on_invalid_json(self):
+        html = '<html><head><script id="__NEXT_DATA__" type="application/json">{bad json}</script></head></html>'
+        assert sync._extract_next_data(html) is None
+
+
+class TestFindSlugsInNextData:
+    def test_finds_nested_slugs(self):
+        data = {
+            "props": {
+                "pageProps": {
+                    "models": [
+                        {"slug": "kimi-k2-6"},
+                        {"slug": "glm-5-1"},
+                    ]
+                }
+            }
+        }
+        slugs = sync._find_slugs_in_next_data(data)
+        assert "kimi-k2-6" in slugs
+        assert "glm-5-1" in slugs
+
+    def test_deduplicates_slugs(self):
+        data = {
+            "a": {"slug": "model-x"},
+            "b": {"slug": "model-x"},
+        }
+        slugs = sync._find_slugs_in_next_data(data)
+        assert slugs.count("model-x") == 1
+
+
+class TestFetchTogetherAIViaAPI:
+    def test_returns_list_from_api(self):
+        sample = [
+            {
+                "id": "meta-llama/Meta-Llama-3-8B-Instruct",
+                "type": "chat",
+                "context_length": 8192,
+                "pricing": {"input": 0.18, "output": 0.18},
+            }
+        ]
+        mock_response = MagicMock()
+        mock_response.json.return_value = sample
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            result = sync.fetch_together_ai_models_via_api()
+
+        assert isinstance(result, list)
+        assert result[0]["id"] == "meta-llama/Meta-Llama-3-8B-Instruct"
+
+    def test_handles_paginated_response(self):
+        """API may return {"data": [...]} instead of a plain list."""
+        paginated = {"data": [{"id": "model-a", "type": "chat"}]}
+        mock_response = MagicMock()
+        mock_response.json.return_value = paginated
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            result = sync.fetch_together_ai_models_via_api()
+
+        assert result == [{"id": "model-a", "type": "chat"}]
+
+    def test_sends_bearer_token_when_key_provided(self):
+        mock_response = MagicMock()
+        mock_response.json.return_value = []
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response) as mock_get:
+            sync.fetch_together_ai_models_via_api(api_key="test-key-123")
+
+        call_headers = mock_get.call_args[1]["headers"]
+        assert call_headers.get("Authorization") == "Bearer test-key-123"
+
+    def test_raises_on_http_error(self):
+        import requests
+
+        mock_response = MagicMock()
+        mock_response.raise_for_status.side_effect = requests.HTTPError("401")
+
+        with patch("requests.get", return_value=mock_response):
+            with pytest.raises(requests.HTTPError):
+                sync.fetch_together_ai_models_via_api()
+
+
+class TestApiModelToLiteLLMEntry:
+    def test_basic_chat_model(self):
+        model = {
+            "id": "meta-llama/Meta-Llama-3-8B-Instruct",
+            "type": "chat",
+            "context_length": 8192,
+            "pricing": {"input": 0.18, "output": 0.18},
+        }
+        result = sync._api_model_to_litellm_entry(model)
+        assert result is not None
+        key, entry = result
+        assert key == "together_ai/meta-llama/Meta-Llama-3-8B-Instruct"
+        assert entry["mode"] == "chat"
+        assert entry["max_tokens"] == 8192
+        assert entry["input_cost_per_token"] == pytest.approx(0.18 / 1_000_000)
+        assert entry["output_cost_per_token"] == pytest.approx(0.18 / 1_000_000)
+
+    def test_embedding_model(self):
+        model = {"id": "togethercomputer/m2-bert-80M-8k-retrieval", "type": "embedding"}
+        _, entry = sync._api_model_to_litellm_entry(model)
+        assert entry["mode"] == "embedding"
+
+    def test_image_diffusion_model(self):
+        model = {"id": "black-forest-labs/FLUX.1-schnell", "type": "image"}
+        _, entry = sync._api_model_to_litellm_entry(model)
+        assert entry["mode"] == "image_generation"
+
+    def test_diffusion_type(self):
+        model = {"id": "stabilityai/stable-diffusion-xl", "type": "diffusion"}
+        _, entry = sync._api_model_to_litellm_entry(model)
+        assert entry["mode"] == "image_generation"
+
+    def test_returns_none_for_missing_id(self):
+        assert sync._api_model_to_litellm_entry({}) is None
+        assert sync._api_model_to_litellm_entry({"id": ""}) is None
+
+    def test_zero_pricing_included(self):
+        """Free models (price=0) should still get a cost entry."""
+        model = {"id": "free-model", "type": "language", "pricing": {"input": 0, "output": 0}}
+        _, entry = sync._api_model_to_litellm_entry(model)
+        assert entry["input_cost_per_token"] == 0.0
+        assert entry["output_cost_per_token"] == 0.0
+
+    def test_kimi_k2_model(self):
+        """Kimi K2.6 (display name) maps to API id 'moonshotai/Kimi-K2-Instruct'."""
+        model = {
+            "id": "moonshotai/Kimi-K2-Instruct",
+            "type": "chat",
+            "context_length": 131072,
+            "pricing": {"input": 1.20, "output": 4.50},
+        }
+        key, entry = sync._api_model_to_litellm_entry(model)
+        assert key == "together_ai/moonshotai/Kimi-K2-Instruct"
+        assert entry["input_cost_per_token"] == pytest.approx(1.20 / 1_000_000)
+        assert entry["output_cost_per_token"] == pytest.approx(4.50 / 1_000_000)
+        assert entry["max_tokens"] == 131072
+
+    def test_glm_model(self):
+        """GLM-5.1 (display name) maps to an API id like 'THUDM/GLM-Z1-32B'."""
+        model = {
+            "id": "THUDM/GLM-Z1-32B",
+            "type": "chat",
+            "pricing": {"input": 1.40, "output": 4.40},
+        }
+        key, entry = sync._api_model_to_litellm_entry(model)
+        assert key == "together_ai/THUDM/GLM-Z1-32B"
+        assert entry["input_cost_per_token"] == pytest.approx(1.40 / 1_000_000)
+        assert entry["output_cost_per_token"] == pytest.approx(4.40 / 1_000_000)
 
 
 class TestScrapeTogetherAIModelDetail:

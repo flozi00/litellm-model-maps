@@ -30,6 +30,10 @@ jobs:
 
       - name: Run sync script
         run: python scripts/sync_model_costs.py
+        env:
+          # Optional: set TOGETHER_API_KEY in repository secrets to authenticate
+          # against the Together AI REST API and get the full model list with pricing.
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
 
       - name: Commit and push changes
         run: |
