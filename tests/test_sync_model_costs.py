@@ -244,6 +244,34 @@ class TestFindSlugsInNextData:
         slugs = sync._find_slugs_in_next_data(data)
         assert slugs.count("model-x") == 1
 
+    def test_prefers_id_over_slug(self):
+        """When an object has both 'id' (org/model format) and 'slug', prefer id."""
+        data = {
+            "models": [
+                {
+                    "id": "MiniMaxAI/MiniMax-M2.7",
+                    "slug": "minimax-m2-7",
+                }
+            ]
+        }
+        slugs = sync._find_slugs_in_next_data(data)
+        assert "MiniMaxAI/MiniMax-M2.7" in slugs
+        assert "minimax-m2-7" not in slugs
+
+    def test_falls_back_to_slug_when_id_not_org_format(self):
+        """If 'id' is present but not in org/model format, slug is used."""
+        data = {
+            "models": [
+                {
+                    "id": "not-an-org-slash-model",
+                    "slug": "my-model-slug",
+                }
+            ]
+        }
+        slugs = sync._find_slugs_in_next_data(data)
+        assert "my-model-slug" in slugs
+        assert "not-an-org-slash-model" not in slugs
+
 
 class TestFetchTogetherAIViaAPI:
     def test_returns_list_from_api(self):
@@ -389,6 +417,43 @@ class TestScrapeTogetherAIModelDetail:
         assert detail["litellm_provider"] == "together_ai"
         assert detail["input_cost_per_token"] == pytest.approx(0.18 / 1_000_000)
         assert detail["output_cost_per_token"] == pytest.approx(0.18 / 1_000_000)
+
+    def test_extracts_endpoint_model_id(self):
+        """Endpoint field on detail page gives the canonical API model ID."""
+        html = """
+        <html><body>
+          <p>Endpoint MiniMaxAI/MiniMax-M2.7</p>
+          <p>Input $0.30 / 1M tokens</p>
+          <p>Output $1.20 / 1M tokens</p>
+        </body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            detail = sync.scrape_together_ai_model_detail("minimax-m2-7")
+
+        assert detail is not None
+        assert detail["_model_id"] == "MiniMaxAI/MiniMax-M2.7"
+
+    def test_no_model_id_when_endpoint_absent(self):
+        """When the Endpoint field is missing, _model_id should not be set."""
+        html = """
+        <html><body>
+          <p>Input $0.18 / 1M tokens</p>
+          <p>Output $0.18 / 1M tokens</p>
+        </body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            detail = sync.scrape_together_ai_model_detail("llama-3-8b")
+
+        assert detail is not None
+        assert "_model_id" not in detail
 
     def test_returns_none_on_error(self):
         import requests

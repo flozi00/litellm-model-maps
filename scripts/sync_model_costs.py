@@ -238,21 +238,39 @@ def _extract_next_data(html: str) -> dict | None:
 
 def _find_slugs_in_next_data(data: Any) -> list[str]:
     """
-    Recursively search a Next.js data tree for Together AI model slugs.
+    Recursively search a Next.js data tree for Together AI model slugs or model IDs.
 
-    Looks for objects that contain a "slug", "model_slug", or "modelSlug" key.
+    Prefers the actual API model ID (``id`` field in ``org/model`` format such as
+    ``MiniMaxAI/MiniMax-M2.7``) over a URL slug when both are present in the same
+    object — this avoids the slug→key mismatch bug where the URL slug
+    (e.g. ``minimax-m2-7``) does not match the API model ID.
+
+    Falls back to ``slug``, ``model_slug``, or ``modelSlug`` keys when no ``id`` field
+    with an ``org/model``-format value is found.
+
     Returns a deduplicated list preserving first-seen order.
     """
+    _ORG_MODEL_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.:+-]+$")
     seen: set[str] = set()
     found: list[str] = []
 
     def _walk(node: Any) -> None:
         if isinstance(node, dict):
-            for key in ("slug", "model_slug", "modelSlug"):
-                val = node.get(key)
-                if isinstance(val, str) and val and val not in seen:
-                    seen.add(val)
-                    found.append(val)
+            # Prefer the actual API model id (e.g. "MiniMaxAI/MiniMax-M2.7") over
+            # the URL slug.  The `id` key is used by the Together AI REST API and
+            # sometimes also appears in __NEXT_DATA__.
+            id_val = node.get("id")
+            if isinstance(id_val, str) and _ORG_MODEL_RE.match(id_val):
+                if id_val not in seen:
+                    seen.add(id_val)
+                    found.append(id_val)
+            else:
+                # Fall back to slug keys
+                for key in ("slug", "model_slug", "modelSlug"):
+                    val = node.get(key)
+                    if isinstance(val, str) and val and val not in seen:
+                        seen.add(val)
+                        found.append(val)
             for v in node.values():
                 _walk(v)
         elif isinstance(node, list):
@@ -325,6 +343,11 @@ def scrape_together_ai_model_detail(slug: str) -> dict[str, Any] | None:
     Scrape pricing and metadata for a single Together AI model.
 
     Returns a dict compatible with the LiteLLM model price format, or None on failure.
+
+    If the page contains an "Endpoint" field (e.g. ``MiniMaxAI/MiniMax-M2.7``), the
+    dict will also contain a private ``_model_id`` key with the canonical API model ID.
+    The caller (``scrape_together_ai_models``) pops this key and uses it to build the
+    correct LiteLLM key instead of the URL slug.
     """
     url = f"{TOGETHER_MODEL_DETAIL_BASE}{slug}"
     headers = {
@@ -348,6 +371,17 @@ def scrape_together_ai_model_detail(slug: str) -> dict[str, Any] | None:
         "mode": "chat",
         "source": url,
     }
+
+    # --- Extract the canonical API model ID from the "Endpoint" field ---------------
+    # Together AI detail pages show an "Endpoint" row like "MiniMaxAI/MiniMax-M2.7".
+    # We match a case-insensitive word boundary around "endpoint" followed by a value
+    # in org/model format (e.g. "MiniMaxAI/MiniMax-M2.7").
+    endpoint_match = re.search(
+        r"(?i)\bEndpoint\b[:\s]+([A-Za-z0-9_.-]+/[A-Za-z0-9_.:+-]+)",
+        page_text,
+    )
+    if endpoint_match:
+        model_data["_model_id"] = endpoint_match.group(1)
 
     # --- Extract context window / max tokens ---
     ctx_match = re.search(
@@ -456,7 +490,11 @@ def scrape_together_ai_models() -> dict[str, Any]:
         )
         detail = scrape_together_ai_model_detail(slug)
         if detail:
-            key = _derive_together_model_key(slug)
+            # Use the canonical API model ID extracted from the detail page if
+            # available (e.g. "MiniMaxAI/MiniMax-M2.7" from the "Endpoint" field).
+            # Fall back to the URL slug only when no endpoint ID was found.
+            model_id = detail.pop("_model_id", slug)
+            key = _derive_together_model_key(model_id)
             scraped[key] = detail
 
         # Polite crawl delay
