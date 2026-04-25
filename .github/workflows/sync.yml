@@ -1,0 +1,60 @@
+name: Sync Model Cost Maps
+
+on:
+  schedule:
+    # Run daily at 02:00 UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    # Allow manual triggers
+  pull_request:
+    # Run on PRs so results can be checked before merging
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # On pull_request events the default checkout is a merge commit in
+          # detached HEAD state; checking out the actual head ref lets us push
+          # the updated JSON back to the PR branch.
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sync script
+        run: python scripts/sync_model_costs.py
+        env:
+          # Optional: set TOGETHER_API_KEY in repository secrets to authenticate
+          # against the Together AI REST API and get the full model list with pricing.
+          TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+          # Optional: set DEEPINFRA_API_KEY in repository secrets to authenticate
+          # against the DeepInfra REST API.
+          DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add model_prices_and_context_window.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: sync model cost maps [skip ci]"
+            git push
+          fi
