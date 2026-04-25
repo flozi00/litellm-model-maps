@@ -39413,5 +39413,190 @@
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
         "supports_pdf_input": true
+    },
+    "together_ai/glm-51": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/glm-51",
+        "max_tokens": 200000,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 200000
+    },
+    "together_ai/minimax-m2-7": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/minimax-m2-7",
+        "max_tokens": 228700,
+        "max_input_tokens": 228700,
+        "max_output_tokens": 228700
+    },
+    "together_ai/kimi-k26": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/kimi-k26",
+        "max_tokens": 256000,
+        "max_input_tokens": 256000,
+        "max_output_tokens": 256000
+    },
+    "together_ai/deepseek-v4-pro": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/deepseek-v4-pro",
+        "max_tokens": 512000,
+        "max_input_tokens": 512000,
+        "max_output_tokens": 512000
+    },
+    "together_ai/deepseek-v4-flash": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/deepseek-v4-flash",
+        "max_tokens": 1000,
+        "max_input_tokens": 1000,
+        "max_output_tokens": 1000
+    },
+    "together_ai/gpt-oss-120b": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/gpt-oss-120b",
+        "max_tokens": 128000,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 128000
+    },
+    "together_ai/nvidia-nemotron-3-super": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/nvidia-nemotron-3-super",
+        "max_tokens": 1000,
+        "max_input_tokens": 1000,
+        "max_output_tokens": 1000
+    },
+    "together_ai/lfm2-24b-a2b": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/lfm2-24b-a2b",
+        "max_tokens": 32000,
+        "max_input_tokens": 32000,
+        "max_output_tokens": 32000
+    },
+    "together_ai/qwen3-5-397b-a17b": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/qwen3-5-397b-a17b",
+        "max_tokens": 256000,
+        "max_input_tokens": 256000,
+        "max_output_tokens": 256000
+    },
+    "together_ai/minimax-m2-5": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/minimax-m2-5",
+        "max_tokens": 192000,
+        "max_input_tokens": 192000,
+        "max_output_tokens": 192000
+    },
+    "together_ai/glm-5": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/glm-5",
+        "max_tokens": 202000,
+        "max_input_tokens": 202000,
+        "max_output_tokens": 202000
+    },
+    "together_ai/qwen3-coder-next": {
+        "litellm_provider": "together_ai",
+        "mode": "embedding",
+        "source": "https://www.together.ai/models/qwen3-coder-next",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000
+    },
+    "together_ai/kimi-k2-5": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/kimi-k2-5",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000
+    },
+    "together_ai/wan-2-6-image": {
+        "litellm_provider": "together_ai",
+        "mode": "image_generation",
+        "source": "https://www.together.ai/models/wan-2-6-image"
+    },
+    "together_ai/gpt-image-1-5": {
+        "litellm_provider": "together_ai",
+        "mode": "image_generation",
+        "source": "https://www.together.ai/models/gpt-image-1-5"
+    },
+    "together_ai/qwen3-5-9b": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/qwen3-5-9b",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000
+    },
+    "together_ai/gemma-4-31b": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/gemma-4-31b",
+        "max_tokens": 256000,
+        "max_input_tokens": 256000,
+        "max_output_tokens": 256000
+    },
+    "together_ai/gemma-3-27b": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/gemma-3-27b",
+        "max_tokens": 64000,
+        "max_input_tokens": 64000,
+        "max_output_tokens": 64000
+    },
+    "together_ai/llama-4-maverick": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/llama-4-maverick",
+        "max_tokens": 1048,
+        "max_input_tokens": 1048,
+        "max_output_tokens": 1048
+    },
+    "together_ai/google-veo-3-0": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/google-veo-3-0"
+    },
+    "together_ai/flux-2-pro": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/flux-2-pro",
+        "max_tokens": 32000,
+        "max_input_tokens": 32000,
+        "max_output_tokens": 32000
+    },
+    "together_ai/nano-banana-pro": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/nano-banana-pro"
+    },
+    "together_ai/glm-4-7": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/glm-4-7",
+        "max_tokens": 202000,
+        "max_input_tokens": 202000,
+        "max_output_tokens": 202000
+    },
+    "together_ai/deepseek-v3-1": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/deepseek-v3-1",
+        "max_tokens": 128000,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 128000
+    },
+    "together_ai/minimax-speech-2-6-turbo": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/minimax-speech-2-6-turbo"
     }
 }
