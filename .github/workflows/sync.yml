@@ -6,6 +6,10 @@ on:
     - cron: "0 2 * * *"
   workflow_dispatch:
     # Allow manual triggers
+  pull_request:
+    # Run on PRs so results can be checked before merging
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -35,7 +39,16 @@ jobs:
           # against the Together AI REST API and get the full model list with pricing.
           TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
 
+      - name: Upload result as artifact (PR preview)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: model_prices_and_context_window
+          path: model_prices_and_context_window.json
+          retention-days: 7
+
       - name: Commit and push changes
+        if: github.event_name != 'pull_request'
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
