@@ -43,6 +43,9 @@ jobs:
           # Optional: set TOGETHER_API_KEY in repository secrets to authenticate
           # against the Together AI REST API and get the full model list with pricing.
           TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
+          # Optional: set DEEPINFRA_API_KEY in repository secrets to authenticate
+          # against the DeepInfra REST API.
+          DEEPINFRA_API_KEY: ${{ secrets.DEEPINFRA_API_KEY }}
 
       - name: Commit and push changes
         run: |

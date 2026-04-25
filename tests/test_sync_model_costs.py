@@ -421,3 +421,270 @@ class TestScrapeTogetherAIModelDetail:
 
         assert detail is not None
         assert detail["mode"] == "image_generation"
+
+
+# ---------------------------------------------------------------------------
+# DeepInfra tests
+# ---------------------------------------------------------------------------
+
+
+class TestFetchDeepInfraViaAPI:
+    def test_returns_list_from_openai_format(self):
+        """Standard OpenAI-compatible response: {"object": "list", "data": [...]}"""
+        sample = {
+            "object": "list",
+            "data": [
+                {
+                    "id": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+                    "object": "model",
+                    "created": 1234567890,
+                    "owned_by": "meta-llama",
+                }
+            ],
+        }
+        mock_response = MagicMock()
+        mock_response.json.return_value = sample
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            result = sync.fetch_deepinfra_models_via_api()
+
+        assert isinstance(result, list)
+        assert result[0]["id"] == "meta-llama/Meta-Llama-3.1-70B-Instruct"
+
+    def test_handles_plain_list_response(self):
+        """API may return a plain list instead of paginated {"data": [...]} format."""
+        sample = [{"id": "deepseek-ai/DeepSeek-V4-Pro", "object": "model"}]
+        mock_response = MagicMock()
+        mock_response.json.return_value = sample
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            result = sync.fetch_deepinfra_models_via_api()
+
+        assert result == sample
+
+    def test_sends_bearer_token_when_key_provided(self):
+        mock_response = MagicMock()
+        mock_response.json.return_value = {"data": []}
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response) as mock_get:
+            sync.fetch_deepinfra_models_via_api(api_key="di-test-key")
+
+        call_headers = mock_get.call_args[1]["headers"]
+        assert call_headers.get("Authorization") == "Bearer di-test-key"
+
+    def test_raises_on_http_error(self):
+        import requests
+
+        mock_response = MagicMock()
+        mock_response.raise_for_status.side_effect = requests.HTTPError("401")
+
+        with patch("requests.get", return_value=mock_response):
+            with pytest.raises(requests.HTTPError):
+                sync.fetch_deepinfra_models_via_api()
+
+
+class TestDeepInfraApiModelToLiteLLMEntry:
+    def test_basic_chat_model(self):
+        model = {
+            "id": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+            "object": "model",
+            "owned_by": "meta-llama",
+        }
+        result = sync._deepinfra_api_model_to_litellm_entry(model)
+        assert result is not None
+        key, entry = result
+        assert key == "deepinfra/meta-llama/Meta-Llama-3.1-70B-Instruct"
+        assert entry["litellm_provider"] == "deepinfra"
+        assert entry["mode"] == "chat"
+
+    def test_embedding_model_detected_from_id(self):
+        model = {"id": "BAAI/bge-large-en-v1.5-embed", "object": "model"}
+        _, entry = sync._deepinfra_api_model_to_litellm_entry(model)
+        assert entry["mode"] == "embedding"
+
+    def test_pricing_parsed_when_present(self):
+        model = {
+            "id": "deepseek-ai/DeepSeek-V4-Pro",
+            "object": "model",
+            "pricing": {"input": 1.74, "output": 3.48},
+            "context_length": 163840,
+        }
+        key, entry = sync._deepinfra_api_model_to_litellm_entry(model)
+        assert key == "deepinfra/deepseek-ai/DeepSeek-V4-Pro"
+        assert entry["input_cost_per_token"] == pytest.approx(1.74 / 1_000_000)
+        assert entry["output_cost_per_token"] == pytest.approx(3.48 / 1_000_000)
+        assert entry["max_tokens"] == 163840
+
+    def test_returns_none_for_missing_id(self):
+        assert sync._deepinfra_api_model_to_litellm_entry({}) is None
+        assert sync._deepinfra_api_model_to_litellm_entry({"id": ""}) is None
+
+    def test_zero_pricing_included(self):
+        model = {
+            "id": "some-org/free-model",
+            "pricing": {"input": 0, "output": 0},
+        }
+        _, entry = sync._deepinfra_api_model_to_litellm_entry(model)
+        assert entry["input_cost_per_token"] == 0.0
+        assert entry["output_cost_per_token"] == 0.0
+
+
+class TestFindDeepInfraEntriesInNextData:
+    def test_finds_model_with_pricing(self):
+        data = {
+            "props": {
+                "pageProps": {
+                    "models": [
+                        {
+                            "modelId": "deepseek-ai/DeepSeek-V4-Pro",
+                            "name": "DeepSeek V4 Pro",
+                            "pricing": {"input_cost": "1.74", "output_cost": "3.48"},
+                            "context_length": 163840,
+                            "type": "text",
+                        }
+                    ]
+                }
+            }
+        }
+        entries = sync._find_deepinfra_entries_in_next_data(data)
+        assert "deepinfra/deepseek-ai/DeepSeek-V4-Pro" in entries
+        entry = entries["deepinfra/deepseek-ai/DeepSeek-V4-Pro"]
+        assert entry["input_cost_per_token"] == pytest.approx(1.74 / 1_000_000)
+        assert entry["output_cost_per_token"] == pytest.approx(3.48 / 1_000_000)
+        assert entry["max_tokens"] == 163840
+
+    def test_deduplicates_model_ids(self):
+        data = {
+            "a": {"modelId": "org/model-x", "pricing": {}},
+            "b": {"modelId": "org/model-x", "pricing": {}},
+        }
+        entries = sync._find_deepinfra_entries_in_next_data(data)
+        assert list(entries.keys()).count("deepinfra/org/model-x") == 1
+
+    def test_returns_empty_dict_when_no_models(self):
+        data = {"props": {"pageProps": {"page": "home"}}}
+        entries = sync._find_deepinfra_entries_in_next_data(data)
+        assert entries == {}
+
+    def test_detects_embedding_mode_from_type(self):
+        data = {
+            "models": [
+                {"modelId": "BAAI/bge-large-en-v1.5", "type": "embedding"},
+            ]
+        }
+        entries = sync._find_deepinfra_entries_in_next_data(data)
+        assert entries["deepinfra/BAAI/bge-large-en-v1.5"]["mode"] == "embedding"
+
+
+class TestScrapeDeepInfraModelList:
+    def test_parses_model_links_from_anchors(self):
+        html = """
+        <html><body>
+          <a href="/deepseek-ai/DeepSeek-V4-Pro">DeepSeek V4 Pro</a>
+          <a href="/meta-llama/Meta-Llama-3.1-70B-Instruct">LLaMA</a>
+          <a href="/docs/api">Docs</a>
+          <a href="/deepseek-ai/DeepSeek-V4-Pro">duplicate</a>
+        </body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            slugs = sync.scrape_deepinfra_model_list()
+
+        assert "deepseek-ai/DeepSeek-V4-Pro" in slugs
+        assert "meta-llama/Meta-Llama-3.1-70B-Instruct" in slugs
+        # /docs/api is filtered — "docs" is in the non-org list
+        assert "docs/api" not in slugs
+        # No duplicates
+        assert slugs.count("deepseek-ai/DeepSeek-V4-Pro") == 1
+
+    def test_uses_next_data_when_available(self):
+        html = """
+        <html><head>
+          <script id="__NEXT_DATA__" type="application/json">
+          {"props":{"pageProps":{"models":[
+            {"modelId":"deepseek-ai/DeepSeek-V4-Pro","pricing":{"input_cost":"1.74","output_cost":"3.48"}},
+            {"modelId":"moonshotai/Kimi-K2-Instruct","pricing":{"input_cost":"0.75","output_cost":"3.50"}}
+          ]}}}
+          </script>
+        </head><body></body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            slugs = sync.scrape_deepinfra_model_list()
+
+        # Keys returned by the __NEXT_DATA__ path are prefixed with "deepinfra/"
+        assert "deepinfra/deepseek-ai/DeepSeek-V4-Pro" in slugs
+        assert "deepinfra/moonshotai/Kimi-K2-Instruct" in slugs
+
+    def test_returns_empty_list_on_error(self):
+        import requests
+
+        with patch("requests.get", side_effect=requests.RequestException("timeout")):
+            slugs = sync.scrape_deepinfra_model_list()
+
+        assert slugs == []
+
+
+class TestScrapeDeepInfraModelDetail:
+    def test_parses_pricing_and_context(self):
+        html = """
+        <html><body>
+          <p>Context Window: 163840 tokens</p>
+          <p>Input $1.74 / 1M tokens</p>
+          <p>Output $3.48 / 1M tokens</p>
+        </body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            detail = sync.scrape_deepinfra_model_detail("deepseek-ai/DeepSeek-V4-Pro")
+
+        assert detail is not None
+        assert detail["litellm_provider"] == "deepinfra"
+        assert detail["input_cost_per_token"] == pytest.approx(1.74 / 1_000_000)
+        assert detail["output_cost_per_token"] == pytest.approx(3.48 / 1_000_000)
+        assert detail["max_tokens"] == 163840
+
+    def test_detects_embedding_mode(self):
+        html = "<html><body><p>Text embedding model for semantic search</p></body></html>"
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            detail = sync.scrape_deepinfra_model_detail("BAAI/bge-large-en-v1.5")
+
+        assert detail is not None
+        assert detail["mode"] == "embedding"
+
+    def test_detects_flux_image_model(self):
+        html = "<html><body><p>FLUX image generation model</p></body></html>"
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            detail = sync.scrape_deepinfra_model_detail("black-forest-labs/FLUX.1-schnell")
+
+        assert detail is not None
+        assert detail["mode"] == "image_generation"
+
+    def test_returns_none_on_error(self):
+        import requests
+
+        with patch("requests.get", side_effect=requests.RequestException("timeout")):
+            detail = sync.scrape_deepinfra_model_detail("deepseek-ai/DeepSeek-V4-Pro")
+
+        assert detail is None
+
