@@ -22,6 +22,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # On pull_request events the default checkout is a merge commit in
+          # detached HEAD state; checking out the actual head ref lets us push
+          # the updated JSON back to the PR branch.
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,16 +44,7 @@ jobs:
           # against the Together AI REST API and get the full model list with pricing.
           TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY }}
 
-      - name: Upload result as artifact (PR preview)
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: model_prices_and_context_window
-          path: model_prices_and_context_window.json
-          retention-days: 7
-
       - name: Commit and push changes
-        if: github.event_name != 'pull_request'
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
