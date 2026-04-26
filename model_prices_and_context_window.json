@@ -4659,6 +4659,169 @@
         "supports_vision": true,
         "supports_web_search": true
     },
+    "azure/gpt-5.5": {
+        "cache_read_input_token_cost": 5e-07,
+        "cache_read_input_token_cost_above_272k_tokens": 1e-06,
+        "cache_read_input_token_cost_priority": 1e-06,
+        "cache_read_input_token_cost_above_272k_tokens_priority": 2e-06,
+        "input_cost_per_token": 5e-06,
+        "input_cost_per_token_above_272k_tokens": 1e-05,
+        "input_cost_per_token_priority": 1e-05,
+        "input_cost_per_token_above_272k_tokens_priority": 2e-05,
+        "litellm_provider": "azure",
+        "max_input_tokens": 1050000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "chat",
+        "output_cost_per_token": 3e-05,
+        "output_cost_per_token_above_272k_tokens": 4.5e-05,
+        "output_cost_per_token_priority": 6e-05,
+        "output_cost_per_token_above_272k_tokens_priority": 9e-05,
+        "supported_endpoints": [
+            "/v1/chat/completions",
+            "/v1/batch",
+            "/v1/responses"
+        ],
+        "supported_modalities": [
+            "text",
+            "image"
+        ],
+        "supported_output_modalities": [
+            "text"
+        ],
+        "supports_function_calling": true,
+        "supports_native_streaming": true,
+        "supports_parallel_function_calling": true,
+        "supports_pdf_input": true,
+        "supports_prompt_caching": true,
+        "supports_reasoning": true,
+        "supports_response_schema": true,
+        "supports_system_messages": true,
+        "supports_tool_choice": true,
+        "supports_service_tier": true,
+        "supports_vision": true,
+        "supports_web_search": true,
+        "supports_none_reasoning_effort": true,
+        "supports_xhigh_reasoning_effort": true,
+        "supports_minimal_reasoning_effort": false
+    },
+    "azure/gpt-5.5-2026-04-23": {
+        "cache_read_input_token_cost": 5e-07,
+        "cache_read_input_token_cost_above_272k_tokens": 1e-06,
+        "cache_read_input_token_cost_priority": 1e-06,
+        "cache_read_input_token_cost_above_272k_tokens_priority": 2e-06,
+        "input_cost_per_token": 5e-06,
+        "input_cost_per_token_above_272k_tokens": 1e-05,
+        "input_cost_per_token_priority": 1e-05,
+        "input_cost_per_token_above_272k_tokens_priority": 2e-05,
+        "litellm_provider": "azure",
+        "max_input_tokens": 1050000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "chat",
+        "output_cost_per_token": 3e-05,
+        "output_cost_per_token_above_272k_tokens": 4.5e-05,
+        "output_cost_per_token_priority": 6e-05,
+        "output_cost_per_token_above_272k_tokens_priority": 9e-05,
+        "supported_endpoints": [
+            "/v1/chat/completions",
+            "/v1/batch",
+            "/v1/responses"
+        ],
+        "supported_modalities": [
+            "text",
+            "image"
+        ],
+        "supported_output_modalities": [
+            "text"
+        ],
+        "supports_function_calling": true,
+        "supports_native_streaming": true,
+        "supports_parallel_function_calling": true,
+        "supports_pdf_input": true,
+        "supports_prompt_caching": true,
+        "supports_reasoning": true,
+        "supports_response_schema": true,
+        "supports_system_messages": true,
+        "supports_tool_choice": true,
+        "supports_service_tier": true,
+        "supports_vision": true,
+        "supports_web_search": true
+    },
+    "azure/gpt-5.5-pro": {
+        "cache_read_input_token_cost": 6e-06,
+        "cache_read_input_token_cost_above_272k_tokens": 1.2e-05,
+        "input_cost_per_token": 6e-05,
+        "input_cost_per_token_above_272k_tokens": 0.00012,
+        "litellm_provider": "azure",
+        "max_input_tokens": 1050000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "responses",
+        "output_cost_per_token": 0.00036,
+        "output_cost_per_token_above_272k_tokens": 0.00054,
+        "supported_endpoints": [
+            "/v1/batch",
+            "/v1/responses"
+        ],
+        "supported_modalities": [
+            "text",
+            "image"
+        ],
+        "supported_output_modalities": [
+            "text"
+        ],
+        "supports_function_calling": true,
+        "supports_native_streaming": true,
+        "supports_parallel_function_calling": true,
+        "supports_pdf_input": true,
+        "supports_prompt_caching": true,
+        "supports_reasoning": true,
+        "supports_response_schema": false,
+        "supports_system_messages": true,
+        "supports_tool_choice": true,
+        "supports_vision": true,
+        "supports_web_search": true,
+        "supports_none_reasoning_effort": false,
+        "supports_xhigh_reasoning_effort": true,
+        "supports_minimal_reasoning_effort": false,
+        "supports_low_reasoning_effort": false
+    },
+    "azure/gpt-5.5-pro-2026-04-23": {
+        "cache_read_input_token_cost": 6e-06,
+        "cache_read_input_token_cost_above_272k_tokens": 1.2e-05,
+        "input_cost_per_token": 6e-05,
+        "input_cost_per_token_above_272k_tokens": 0.00012,
+        "litellm_provider": "azure",
+        "max_input_tokens": 1050000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "responses",
+        "output_cost_per_token": 0.00036,
+        "output_cost_per_token_above_272k_tokens": 0.00054,
+        "supported_endpoints": [
+            "/v1/batch",
+            "/v1/responses"
+        ],
+        "supported_modalities": [
+            "text",
+            "image"
+        ],
+        "supported_output_modalities": [
+            "text"
+        ],
+        "supports_function_calling": true,
+        "supports_native_streaming": true,
+        "supports_parallel_function_calling": true,
+        "supports_pdf_input": true,
+        "supports_prompt_caching": true,
+        "supports_reasoning": true,
+        "supports_response_schema": false,
+        "supports_system_messages": true,
+        "supports_tool_choice": true,
+        "supports_vision": true,
+        "supports_web_search": true
+    },
     "azure/gpt-5.4-mini": {
         "cache_read_input_token_cost": 7.5e-08,
         "input_cost_per_token": 7.5e-07,
@@ -7883,17 +8046,16 @@
     },
     "bedrock/us-east-1/minimax.minimax-m2.5": {
         "input_cost_per_token": 3e-07,
+        "output_cost_per_token": 1.2e-06,
         "litellm_provider": "bedrock",
         "max_input_tokens": 1000000,
         "max_output_tokens": 8192,
         "max_tokens": 8192,
         "mode": "chat",
-        "source": "https://aws.amazon.com/bedrock/pricing/",
         "supports_function_calling": true,
-        "supports_reasoning": true,
         "supports_system_messages": true,
         "supports_tool_choice": true,
-        "output_cost_per_token": 1.2e-06
+        "source": "https://aws.amazon.com/bedrock/pricing/"
     },
     "bedrock/us-east-1/moonshotai.kimi-k2-thinking": {
         "input_cost_per_token": 6e-07,
@@ -8501,17 +8663,16 @@
     },
     "bedrock/us-west-2/minimax.minimax-m2.5": {
         "input_cost_per_token": 3e-07,
+        "output_cost_per_token": 1.2e-06,
         "litellm_provider": "bedrock",
         "max_input_tokens": 1000000,
         "max_output_tokens": 8192,
         "max_tokens": 8192,
         "mode": "chat",
-        "source": "https://aws.amazon.com/bedrock/pricing/",
         "supports_function_calling": true,
-        "supports_reasoning": true,
         "supports_system_messages": true,
         "supports_tool_choice": true,
-        "output_cost_per_token": 1.2e-06
+        "source": "https://aws.amazon.com/bedrock/pricing/"
     },
     "bedrock/us-west-2/moonshotai.kimi-k2-thinking": {
         "input_cost_per_token": 6e-07,
@@ -15400,7 +15561,7 @@
         "mode": "embedding",
         "output_cost_per_token": 0,
         "output_vector_size": 3072,
-        "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+        "source": "https://ai.google.dev/gemini-api/docs/embeddings#multimodal",
         "supports_multimodal": true,
         "uses_embed_content": true
     },
@@ -20957,7 +21118,7 @@
     },
     "gradient_ai/alibaba-qwen3-32b": {
         "litellm_provider": "gradient_ai",
-        "max_tokens": 2048,
+        "max_tokens": 40960,
         "mode": "chat",
         "supported_endpoints": [
             "/v1/chat/completions"
@@ -20965,7 +21126,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 131072,
+        "max_output_tokens": 40960
     },
     "gradient_ai/anthropic-claude-3-opus": {
         "input_cost_per_token": 1.5e-05,
@@ -20979,7 +21142,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 1024
     },
     "gradient_ai/anthropic-claude-3.5-haiku": {
         "input_cost_per_token": 8e-07,
@@ -20993,7 +21158,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 1024
     },
     "gradient_ai/anthropic-claude-3.5-sonnet": {
         "input_cost_per_token": 3e-06,
@@ -21007,7 +21174,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 1024
     },
     "gradient_ai/anthropic-claude-3.7-sonnet": {
         "input_cost_per_token": 3e-06,
@@ -21021,7 +21190,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 1024
     },
     "gradient_ai/deepseek-r1-distill-llama-70b": {
         "input_cost_per_token": 9.9e-07,
@@ -21035,7 +21206,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 32768,
+        "max_output_tokens": 8000
     },
     "gradient_ai/llama3-8b-instruct": {
         "input_cost_per_token": 2e-07,
@@ -21049,7 +21222,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 8192,
+        "max_output_tokens": 512
     },
     "gradient_ai/llama3.3-70b-instruct": {
         "input_cost_per_token": 6.5e-07,
@@ -21063,7 +21238,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 2048
     },
     "gradient_ai/mistral-nemo-instruct-2407": {
         "input_cost_per_token": 3e-07,
@@ -21077,7 +21254,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 512
     },
     "gradient_ai/openai-gpt-4o": {
         "litellm_provider": "gradient_ai",
@@ -21089,7 +21268,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 16384
     },
     "gradient_ai/openai-gpt-4o-mini": {
         "litellm_provider": "gradient_ai",
@@ -21101,7 +21282,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 16384
     },
     "gradient_ai/openai-o3": {
         "input_cost_per_token": 2e-06,
@@ -21115,7 +21298,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 100000
     },
     "gradient_ai/openai-o3-mini": {
         "input_cost_per_token": 1.1e-06,
@@ -21129,7 +21314,9 @@
         "supported_modalities": [
             "text"
         ],
-        "supports_tool_choice": false
+        "supports_tool_choice": false,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 100000
     },
     "lemonade/Qwen3-Coder-30B-A3B-Instruct-GGUF": {
         "input_cost_per_token": 0,
@@ -21429,11 +21616,13 @@
     },
     "heroku/claude-3-5-haiku": {
         "litellm_provider": "heroku",
-        "max_tokens": 4096,
+        "max_tokens": 8192,
         "mode": "chat",
         "supports_function_calling": true,
         "supports_system_messages": true,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 8192
     },
     "heroku/claude-3-5-sonnet-latest": {
         "litellm_provider": "heroku",
@@ -21441,7 +21630,9 @@
         "mode": "chat",
         "supports_function_calling": true,
         "supports_system_messages": true,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 8192
     },
     "heroku/claude-3-7-sonnet": {
         "litellm_provider": "heroku",
@@ -21449,7 +21640,9 @@
         "mode": "chat",
         "supports_function_calling": true,
         "supports_system_messages": true,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 8192
     },
     "heroku/claude-4-sonnet": {
         "litellm_provider": "heroku",
@@ -21457,7 +21650,9 @@
         "mode": "chat",
         "supports_function_calling": true,
         "supports_system_messages": true,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 8192
     },
     "high/1024-x-1024/gpt-image-1": {
         "input_cost_per_image": 0.167,
@@ -22173,48 +22368,6 @@
             "/v1/images/generations"
         ]
     },
-    "luminous-base": {
-        "input_cost_per_token": 3e-05,
-        "litellm_provider": "aleph_alpha",
-        "max_tokens": 2048,
-        "mode": "completion",
-        "output_cost_per_token": 3.3e-05
-    },
-    "luminous-base-control": {
-        "input_cost_per_token": 3.75e-05,
-        "litellm_provider": "aleph_alpha",
-        "max_tokens": 2048,
-        "mode": "chat",
-        "output_cost_per_token": 4.125e-05
-    },
-    "luminous-extended": {
-        "input_cost_per_token": 4.5e-05,
-        "litellm_provider": "aleph_alpha",
-        "max_tokens": 2048,
-        "mode": "completion",
-        "output_cost_per_token": 4.95e-05
-    },
-    "luminous-extended-control": {
-        "input_cost_per_token": 5.625e-05,
-        "litellm_provider": "aleph_alpha",
-        "max_tokens": 2048,
-        "mode": "chat",
-        "output_cost_per_token": 6.1875e-05
-    },
-    "luminous-supreme": {
-        "input_cost_per_token": 0.000175,
-        "litellm_provider": "aleph_alpha",
-        "max_tokens": 2048,
-        "mode": "completion",
-        "output_cost_per_token": 0.0001925
-    },
-    "luminous-supreme-control": {
-        "input_cost_per_token": 0.00021875,
-        "litellm_provider": "aleph_alpha",
-        "max_tokens": 2048,
-        "mode": "chat",
-        "output_cost_per_token": 0.000240625
-    },
     "max-x-max/50-steps/stability.stable-diffusion-xl-v0": {
         "litellm_provider": "bedrock",
         "max_input_tokens": 77,
@@ -22589,14 +22742,13 @@
     },
     "minimax.minimax-m2.5": {
         "input_cost_per_token": 3e-07,
+        "output_cost_per_token": 1.2e-06,
         "litellm_provider": "bedrock_converse",
         "max_input_tokens": 1000000,
         "max_output_tokens": 8192,
         "max_tokens": 8192,
         "mode": "chat",
-        "output_cost_per_token": 1.2e-06,
         "supports_function_calling": true,
-        "supports_reasoning": true,
         "supports_system_messages": true,
         "supports_tool_choice": true,
         "source": "https://aws.amazon.com/bedrock/pricing/"
@@ -25686,12 +25838,14 @@
         "input_cost_per_image": 0.0004,
         "input_cost_per_token": 2.5e-07,
         "litellm_provider": "openrouter",
-        "max_tokens": 200000,
+        "max_tokens": 4096,
         "mode": "chat",
         "output_cost_per_token": 1.25e-06,
         "supports_function_calling": true,
         "supports_tool_choice": true,
-        "supports_vision": true
+        "supports_vision": true,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 4096
     },
     "openrouter/anthropic/claude-3.5-sonnet": {
         "input_cost_per_token": 3e-06,
@@ -26284,18 +26438,22 @@
     "openrouter/mancer/weaver": {
         "input_cost_per_token": 5.625e-06,
         "litellm_provider": "openrouter",
-        "max_tokens": 8000,
+        "max_tokens": 2000,
         "mode": "chat",
         "output_cost_per_token": 5.625e-06,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 8000,
+        "max_output_tokens": 2000
     },
     "openrouter/meta-llama/llama-3-70b-instruct": {
         "input_cost_per_token": 5.9e-07,
         "litellm_provider": "openrouter",
-        "max_tokens": 8192,
+        "max_tokens": 8000,
         "mode": "chat",
         "output_cost_per_token": 7.9e-07,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 8192,
+        "max_output_tokens": 8000
     },
     "openrouter/minimax/minimax-m2": {
         "input_cost_per_token": 2.55e-07,
@@ -26383,34 +26541,42 @@
     "openrouter/mistralai/mistral-7b-instruct": {
         "input_cost_per_token": 1.3e-07,
         "litellm_provider": "openrouter",
-        "max_tokens": 8192,
+        "max_tokens": 8191,
         "mode": "chat",
         "output_cost_per_token": 1.3e-07,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 32768,
+        "max_output_tokens": 8191
     },
     "openrouter/mistralai/mistral-large": {
         "input_cost_per_token": 8e-06,
         "litellm_provider": "openrouter",
-        "max_tokens": 32000,
+        "max_tokens": 8191,
         "mode": "chat",
         "output_cost_per_token": 2.4e-05,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 8191
     },
     "openrouter/mistralai/mistral-small-3.1-24b-instruct": {
         "input_cost_per_token": 1e-07,
         "litellm_provider": "openrouter",
-        "max_tokens": 32000,
+        "max_tokens": 131072,
         "mode": "chat",
         "output_cost_per_token": 3e-07,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 131072,
+        "max_output_tokens": 131072
     },
     "openrouter/mistralai/mistral-small-3.2-24b-instruct": {
         "input_cost_per_token": 1e-07,
         "litellm_provider": "openrouter",
-        "max_tokens": 32000,
+        "max_tokens": 128000,
         "mode": "chat",
         "output_cost_per_token": 3e-07,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 128000
     },
     "openrouter/mistralai/mixtral-8x22b-instruct": {
         "input_cost_per_token": 6.5e-07,
@@ -26418,7 +26584,9 @@
         "max_tokens": 65536,
         "mode": "chat",
         "output_cost_per_token": 6.5e-07,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 65536,
+        "max_output_tokens": 65536
     },
     "openrouter/moonshotai/kimi-k2.5": {
         "cache_read_input_token_cost": 1e-07,
@@ -26438,26 +26606,32 @@
     "openrouter/openai/gpt-3.5-turbo": {
         "input_cost_per_token": 1.5e-06,
         "litellm_provider": "openrouter",
-        "max_tokens": 4095,
+        "max_tokens": 4096,
         "mode": "chat",
         "output_cost_per_token": 2e-06,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 16385,
+        "max_output_tokens": 4096
     },
     "openrouter/openai/gpt-3.5-turbo-16k": {
         "input_cost_per_token": 3e-06,
         "litellm_provider": "openrouter",
-        "max_tokens": 16383,
+        "max_tokens": 4096,
         "mode": "chat",
         "output_cost_per_token": 4e-06,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 16385,
+        "max_output_tokens": 4096
     },
     "openrouter/openai/gpt-4": {
         "input_cost_per_token": 3e-05,
         "litellm_provider": "openrouter",
-        "max_tokens": 8192,
+        "max_tokens": 4096,
         "mode": "chat",
         "output_cost_per_token": 6e-05,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 8191,
+        "max_output_tokens": 4096
     },
     "openrouter/openai/gpt-4.1": {
         "cache_read_input_token_cost": 5e-07,
@@ -26965,10 +27139,12 @@
     "openrouter/undi95/remm-slerp-l2-13b": {
         "input_cost_per_token": 1.875e-06,
         "litellm_provider": "openrouter",
-        "max_tokens": 6144,
+        "max_tokens": 4096,
         "mode": "chat",
         "output_cost_per_token": 1.875e-06,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "max_input_tokens": 6144,
+        "max_output_tokens": 4096
     },
     "openrouter/x-ai/grok-4": {
         "input_cost_per_token": 3e-06,
@@ -29589,7 +29765,7 @@
     "together_ai/deepseek-ai/DeepSeek-V3.1": {
         "input_cost_per_token": 6e-07,
         "litellm_provider": "together_ai",
-        "max_tokens": 128000,
+        "max_tokens": 16384,
         "mode": "chat",
         "output_cost_per_token": 1.7e-06,
         "source": "https://www.together.ai/models/deepseek-v3-1",
@@ -29598,7 +29774,7 @@
         "supports_reasoning": true,
         "supports_tool_choice": true,
         "max_input_tokens": 128000,
-        "max_output_tokens": 128000
+        "max_output_tokens": 16384
     },
     "together_ai/meta-llama/Llama-3.2-3B-Instruct-Turbo": {
         "litellm_provider": "together_ai",
@@ -34628,17 +34804,17 @@
     },
     "zai.glm-5": {
         "input_cost_per_token": 1e-06,
+        "output_cost_per_token": 3.2e-06,
         "litellm_provider": "bedrock_converse",
         "max_input_tokens": 200000,
         "max_output_tokens": 128000,
         "max_tokens": 128000,
         "mode": "chat",
-        "output_cost_per_token": 3.2e-06,
-        "source": "https://aws.amazon.com/bedrock/pricing/",
         "supports_function_calling": true,
         "supports_reasoning": true,
         "supports_system_messages": true,
-        "supports_tool_choice": true
+        "supports_tool_choice": true,
+        "source": "https://aws.amazon.com/bedrock/pricing/"
     },
     "zai/glm-5": {
         "cache_creation_input_token_cost": 0,
@@ -39421,6 +39597,34 @@
             }
         ]
     },
+    "bedrock/us-east-1/zai.glm-5": {
+        "input_cost_per_token": 1e-06,
+        "output_cost_per_token": 3.2e-06,
+        "litellm_provider": "bedrock",
+        "max_input_tokens": 200000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_reasoning": true,
+        "supports_system_messages": true,
+        "supports_tool_choice": true,
+        "source": "https://aws.amazon.com/bedrock/pricing/"
+    },
+    "bedrock/us-west-2/zai.glm-5": {
+        "input_cost_per_token": 1e-06,
+        "output_cost_per_token": 3.2e-06,
+        "litellm_provider": "bedrock",
+        "max_input_tokens": 200000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_reasoning": true,
+        "supports_system_messages": true,
+        "supports_tool_choice": true,
+        "source": "https://aws.amazon.com/bedrock/pricing/"
+    },
     "bedrock/us-gov-east-1/anthropic.claude-haiku-4-5-20251001-v1:0": {
         "cache_creation_input_token_cost": 1.5e-06,
         "cache_read_input_token_cost": 1.2e-07,
@@ -39620,212 +39824,7 @@
         "mode": "chat",
         "source": "https://www.together.ai/models/minimax-speech-2-6-turbo"
     },
-    "deepinfra/Bria/fibo_edit": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/google/gemma-4-31B-it": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/PaddlePaddle/PaddleOCR-VL-0.9B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-27B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/google/gemini-1.5-flash": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Embedding-8B": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/google/embeddinggemma-300m": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ByteDance/Seed-2.0-pro": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/deepseek-ai/DeepSeek-V3.2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/paraphrase-MiniLM-L6-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-1-Redux-dev": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/all-MiniLM-L12-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/clip-ViT-B-32": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/deepseek-ai/Janus-Pro-1B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-2B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-4B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/allenai/Olmo-3.1-32B-Instruct": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-1-dev": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/all-mpnet-base-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/expand": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/enhance": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/BAAI/bge-large-en-v1.5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/moonshotai/Kimi-K2.5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/allenai/olmOCR-2-7B-1025": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen-Image-Max": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/deepseek-ai/DeepSeek-V4-Pro": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/zai-org/GLM-5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ClarityAI/crystal": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/BAAI/bge-m3-multi": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-397B-A17B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Max": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Embedding-0.6B-batch": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/intfloat/e5-large-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Wan-AI/Wan2.6-T2I": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/erase_foreground": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/zai-org/GLM-4.7": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/zai-org/GLM-4.7-Flash": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/PrunaAI/p-image-Edit": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/deepseek-ai/Janus-Pro-7B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Embedding-0.6B": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/zai-org/GLM-4.6": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ByteDance/Seedream-4": {
+    "deepinfra/Qwen/Qwen3-VL-235B-A22B-Instruct": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -39835,12 +39834,137 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-VL-235B-A22B-Instruct": {
+    "deepinfra/Qwen/Qwen3-Embedding-8B-batch": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/zai-org/GLM-4.6": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/PaddlePaddle/PaddleOCR-VL-0.9B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ClarityAI/flux": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/DeepSeek-OCR": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/zai-org/GLM-5.1": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/intfloat/multilingual-e5-large-instruct": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Embedding-0.6B": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX.1-Kontext-dev": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/moonshotai/Kimi-K2.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Qwen/Qwen3.6-35B-A3B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/intfloat/multilingual-e5-large": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/BAAI/bge-en-icl": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/llama-nemotron-embed-vl-1b-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/fibo_edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Max-Thinking": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-1-Redux-dev": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/enhance": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Wan-AI/Wan2.6-T2I": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/Bria-3.2-vector": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-VL-30B-A3B-Instruct": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/BAAI/bge-large-en-v1.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Embedding-4B-batch": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/Janus-Pro-1B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ClarityAI/crystal": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen-Image-Edit-Max": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -39850,17 +39974,97 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/ClarityAI/creative": {
+    "deepinfra/ByteDance/Seedream-4": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/black-forest-labs/FLUX.1-Kontext-dev": {
+    "deepinfra/black-forest-labs/FLUX-1-schnell": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/deepseek-ai/DeepSeek-V4-Flash": {
+    "deepinfra/google/gemini-1.5-flash": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/intfloat/e5-base-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ByteDance/Seed-1.8": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/expand": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/gemma-4-26B-A4B-it": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/intfloat/e5-large-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/DeepSeek-V4-Pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/multi-qa-mpnet-base-dot-v1": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen-Image-Edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-2-max": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Wan-AI/Wan2.6-Image-Edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/erase_foreground": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3.5-122B-A10B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Wan-AI/Wan2.7-Image-Edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/gen_fill": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/BAAI/bge-m3-multi": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/remove_background": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -39870,12 +40074,202 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/zai-org/GLM-4.7": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/MiniMaxAI/MiniMax-M2.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/stepfun-ai/Step-3.5-Flash": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/all-mpnet-base-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/clip-ViT-B-32-multilingual-v1": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/Janus-Pro-7B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-2-klein-9b": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/black-forest-labs/FLUX-2-klein-4b": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/deepseek-ai/DeepSeek-OCR": {
+    "deepinfra/Qwen/Qwen3.5-27B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/thenlper/gte-base": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/zai-org/GLM-4.7-Flash": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/zai-org/GLM-5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/DeepSeek-V3.2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3.5-397B-A17B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/allenai/olmOCR-2-7B-1025": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/stabilityai/sdxl-turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/BAAI/bge-m3": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/gemini-1.5-flash-8b": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/erase": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/fibo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/gemma-4-31B-it": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Embedding-4B": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/Bria-3.2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/all-MiniLM-L6-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Embedding-0.6B-batch": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Max": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ClarityAI/creative": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ByteDance/Seed-2.0-mini": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/embeddinggemma-300m": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-1.1-pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Embedding-8B": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/thenlper/gte-large": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/PrunaAI/p-image-Edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ByteDance/Seedream-4.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/DeepSeek-V4-Flash": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/blur_background": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/PrunaAI/p-image": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/shibing624/text2vec-base-chinese": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/paraphrase-MiniLM-L6-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -39890,167 +40284,7 @@
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/stepfun-ai/Step-3.5-Flash": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Embedding-4B": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/zai-org/GLM-5.1": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ClarityAI/flux": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/gen_fill": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/thenlper/gte-large": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/blur_background": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-pro": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/BAAI/bge-en-icl": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-2-max": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-VL-30B-A3B-Instruct": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/nvidia/llama-nemotron-embed-vl-1b-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/stabilityai/sdxl-turbo": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/thenlper/gte-base": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/multi-qa-mpnet-base-dot-v1": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-35B-A3B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/google/gemini-1.5-flash-8b": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-2-klein-9b": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/Bria-3.2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen-Image-Edit-Max": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/Bria-3.2-vector": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ByteDance/Seed-1.8": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Embedding-8B-batch": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/erase": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/nvidia/Nemotron-3-Nano-30B-A3B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen-Image-Edit": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/replace_background": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/remove_background": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Embedding-4B-batch": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/shibing624/text2vec-base-chinese": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/PrunaAI/p-image": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/all-MiniLM-L6-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -40060,67 +40294,27 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/MiniMaxAI/MiniMax-M2.5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-122B-A10B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Max-Thinking": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Wan-AI/Wan2.7-Image-Edit": {
+    "deepinfra/black-forest-labs/FLUX-1-dev": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/intfloat/e5-base-v2": {
+    "deepinfra/sentence-transformers/clip-ViT-B-32": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/sentence-transformers/clip-ViT-B-32-multilingual-v1": {
+    "deepinfra/Bria/replace_background": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Bria/fibo": {
+    "deepinfra/Qwen/Qwen-Image-Max": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/black-forest-labs/FLUX-1-schnell": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Wan-AI/Wan2.6-Image-Edit": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/google/gemma-4-26B-A4B-it": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-1.1-pro": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/intfloat/multilingual-e5-large": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ByteDance/Seed-2.0-mini": {
+    "deepinfra/sentence-transformers/all-MiniLM-L12-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -40130,17 +40324,27 @@
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/BAAI/bge-m3": {
+    "deepinfra/Qwen/Qwen3.5-4B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/intfloat/multilingual-e5-large-instruct": {
+    "deepinfra/ByteDance/Seed-2.0-pro": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/ByteDance/Seedream-4.5": {
+    "deepinfra/allenai/Olmo-3.1-32B-Instruct": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3.5-35B-A3B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3.5-2B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
