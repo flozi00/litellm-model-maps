@@ -39824,17 +39824,17 @@
         "mode": "chat",
         "source": "https://www.together.ai/models/minimax-speech-2-6-turbo"
     },
-    "deepinfra/Qwen/Qwen3-VL-235B-A22B-Instruct": {
+    "deepinfra/Bria/Bria-3.2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3.5-0.8B": {
+    "deepinfra/Qwen/Qwen3-Embedding-4B": {
         "litellm_provider": "deepinfra",
-        "mode": "chat",
+        "mode": "embedding",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-Embedding-8B-batch": {
+    "deepinfra/Qwen/Qwen3-Embedding-8B": {
         "litellm_provider": "deepinfra",
         "mode": "embedding",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -39844,14 +39844,9 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/PaddlePaddle/PaddleOCR-VL-0.9B": {
+    "deepinfra/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ClarityAI/flux": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/deepseek-ai/DeepSeek-OCR": {
@@ -39859,57 +39854,17 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/zai-org/GLM-5.1": {
+    "deepinfra/PaddlePaddle/PaddleOCR-VL-0.9B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/intfloat/multilingual-e5-large-instruct": {
+    "deepinfra/sentence-transformers/all-MiniLM-L6-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-Embedding-0.6B": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX.1-Kontext-dev": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/moonshotai/Kimi-K2.5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-pro": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.6-35B-A3B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/intfloat/multilingual-e5-large": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/BAAI/bge-en-icl": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/nvidia/llama-nemotron-embed-vl-1b-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/fibo_edit": {
+    "deepinfra/moonshotai/Kimi-K2.6": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -39919,92 +39874,12 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/black-forest-labs/FLUX-1-Redux-dev": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/enhance": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Wan-AI/Wan2.6-T2I": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/Bria-3.2-vector": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-VL-30B-A3B-Instruct": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/BAAI/bge-large-en-v1.5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Embedding-4B-batch": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/deepseek-ai/Janus-Pro-1B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ClarityAI/crystal": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen-Image-Edit-Max": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/BAAI/bge-base-en-v1.5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ByteDance/Seedream-4": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-1-schnell": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/google/gemini-1.5-flash": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/intfloat/e5-base-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ByteDance/Seed-1.8": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/Bria/expand": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/google/gemma-4-26B-A4B-it": {
+    "deepinfra/deepseek-ai/Janus-Pro-7B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -40014,22 +39889,92 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/deepseek-ai/DeepSeek-V4-Pro": {
+    "deepinfra/Qwen/Qwen3.5-2B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/sentence-transformers/multi-qa-mpnet-base-dot-v1": {
+    "deepinfra/zai-org/GLM-5": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen-Image-Edit": {
+    "deepinfra/Bria/enhance": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/black-forest-labs/FLUX-2-max": {
+    "deepinfra/Qwen/Qwen3-Embedding-8B-batch": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3.5-4B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-1-schnell": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/PrunaAI/p-image-Edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-2-pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/intfloat/multilingual-e5-large": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/openai/gpt-oss-120b-Turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/thenlper/gte-large": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/llama-nemotron-embed-vl-1b-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-2-klein-9b": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen-Image-Max": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/allenai/olmOCR-2-7B-1025": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Embedding-0.6B-batch": {
+        "litellm_provider": "deepinfra",
+        "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/allenai/Olmo-3.1-32B-Instruct": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-pro": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -40039,17 +39984,67 @@
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Bria/erase_foreground": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/Qwen/Qwen3.5-122B-A10B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Wan-AI/Wan2.7-Image-Edit": {
+    "deepinfra/google/gemini-1.5-flash-8b": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/BAAI/bge-base-en-v1.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/Janus-Pro-1B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/fibo_edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/intfloat/multilingual-e5-large-instruct": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ByteDance/Seed-1.8": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/stabilityai/sdxl-turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3.5-397B-A17B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen-Image-Edit-Max": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Wan-AI/Wan2.6-T2I": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX.1-Kontext-dev": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -40064,117 +40059,32 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Bria/remove_background": {
+    "deepinfra/shibing624/text2vec-base-chinese": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/moonshotai/Kimi-K2.6": {
+    "deepinfra/Bria/replace_background": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/zai-org/GLM-4.7": {
+    "deepinfra/Qwen/Qwen3.5-35B-A3B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/MiniMaxAI/MiniMax-M2.5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/stepfun-ai/Step-3.5-Flash": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/all-mpnet-base-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/clip-ViT-B-32-multilingual-v1": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/deepseek-ai/Janus-Pro-7B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-2-klein-9b": {
+    "deepinfra/Wan-AI/Wan2.7-Image-Edit": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/black-forest-labs/FLUX-2-klein-4b": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-27B": {
+    "deepinfra/PrunaAI/p-image": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/thenlper/gte-base": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/zai-org/GLM-4.7-Flash": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/zai-org/GLM-5": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/deepseek-ai/DeepSeek-V3.2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-397B-A17B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/allenai/olmOCR-2-7B-1025": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/stabilityai/sdxl-turbo": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/BAAI/bge-m3": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/google/gemini-1.5-flash-8b": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/erase": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/fibo": {
+    "deepinfra/Qwen/Qwen3.5-0.8B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -40184,32 +40094,107 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-Embedding-4B": {
+    "deepinfra/BAAI/bge-m3": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/MiniMaxAI/MiniMax-M2.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Embedding-4B-batch": {
         "litellm_provider": "deepinfra",
         "mode": "embedding",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Bria/Bria-3.2": {
+    "deepinfra/stepfun-ai/Step-3.5-Flash": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/sentence-transformers/all-MiniLM-L6-v2": {
+    "deepinfra/sentence-transformers/all-MiniLM-L12-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-Embedding-0.6B-batch": {
+    "deepinfra/ClarityAI/crystal": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/DeepSeek-V3.2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Embedding-0.6B": {
         "litellm_provider": "deepinfra",
         "mode": "embedding",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-Max": {
+    "deepinfra/black-forest-labs/FLUX-2-dev": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/paraphrase-MiniLM-L6-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/ClarityAI/creative": {
+    "deepinfra/Qwen/Qwen3.5-27B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/BAAI/bge-large-en-v1.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/moonshotai/Kimi-K2.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ClarityAI/flux": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/blur_background": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/erase_foreground": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepseek-ai/DeepSeek-V4-Pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-1-Redux-dev": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/all-mpnet-base-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/thenlper/gte-base": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/multi-qa-mpnet-base-dot-v1": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -40219,9 +40204,124 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/zai-org/GLM-4.7-Flash": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-2-klein-4b": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ByteDance/Seed-2.0-pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen-Image-Edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/zai-org/GLM-4.7": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/BAAI/bge-en-icl": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-VL-235B-A22B-Instruct": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/Nemotron-3-Nano-30B-A3B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/zai-org/GLM-5.1": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-Max": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/intfloat/e5-base-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3.6-35B-A3B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/clip-ViT-B-32": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-1-dev": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ByteDance/Seedream-4": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/gemma-4-26B-A4B-it": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/google/embeddinggemma-300m": {
         "litellm_provider": "deepinfra",
         "mode": "embedding",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/fibo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/Bria-3.2-vector": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX-2-max": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/erase": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/remove_background": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sentence-transformers/clip-ViT-B-32-multilingual-v1": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/gemini-1.5-flash": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/black-forest-labs/FLUX-1.1-pro": {
@@ -40229,17 +40329,12 @@
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-Embedding-8B": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/thenlper/gte-large": {
+    "deepinfra/ClarityAI/creative": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/PrunaAI/p-image-Edit": {
+    "deepinfra/Qwen/Qwen3-VL-30B-A3B-Instruct": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -40250,101 +40345,6 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/deepseek-ai/DeepSeek-V4-Flash": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/blur_background": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/PrunaAI/p-image": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/shibing624/text2vec-base-chinese": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/paraphrase-MiniLM-L6-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-2-pro": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/nvidia/Nemotron-3-Nano-30B-A3B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/openai/gpt-oss-120b-Turbo": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-1-dev": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/clip-ViT-B-32": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Bria/replace_background": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen-Image-Max": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/sentence-transformers/all-MiniLM-L12-v2": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/black-forest-labs/FLUX-2-dev": {
-        "litellm_provider": "deepinfra",
-        "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-4B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/ByteDance/Seed-2.0-pro": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/allenai/Olmo-3.1-32B-Instruct": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-35B-A3B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-2B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
