@@ -753,3 +753,23 @@ class TestScrapeDeepInfraModelDetail:
 
         assert detail is None
 
+
+class TestScrapeFireworksModels:
+    def test_includes_deepseek_v4_pro(self):
+        entries = sync.scrape_fireworks_models()
+        key = "fireworks_ai/accounts/fireworks/models/deepseek-v4-pro"
+
+        assert key in entries
+        entry = entries[key]
+        assert entry["litellm_provider"] == "fireworks_ai"
+        assert entry["mode"] == "chat"
+        assert entry["max_tokens"] == 1_000_000
+        assert entry["max_input_tokens"] == 1_000_000
+        assert entry["max_output_tokens"] == 1_000_000
+        assert entry["input_cost_per_token"] == pytest.approx(1.74 / 1_000_000)
+        assert entry["cache_read_input_token_cost"] == pytest.approx(0.15 / 1_000_000)
+        assert entry["output_cost_per_token"] == pytest.approx(3.48 / 1_000_000)
+        assert (
+            entry["source"]
+            == "https://app.fireworks.ai/models/fireworks/deepseek-v4-pro"
+        )

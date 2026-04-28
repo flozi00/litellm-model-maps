@@ -4,7 +4,7 @@ Sync model cost maps from LiteLLM and provider-specific sources.
 
 This script:
 1. Fetches the base model cost data from the LiteLLM GitHub repository
-2. Scrapes additional model pricing from providers (Together AI, DeepInfra)
+2. Scrapes additional model pricing from providers (Together AI, DeepInfra, Fireworks AI)
 3. Merges the data, with scraped data taking precedence for new models
    (existing LiteLLM entries are NOT overwritten)
 4. Saves the result to model_prices_and_context_window.json
@@ -48,6 +48,23 @@ DEEPINFRA_API_URL = "https://api.deepinfra.com/v1/openai/models"
 DEEPINFRA_MODELS_URL = "https://deepinfra.com/models"
 DEEPINFRA_MODEL_DETAIL_BASE = "https://deepinfra.com/"
 DEEPINFRA_PROVIDER_NAME = "deepinfra"
+
+# Fireworks AI supplemental model data
+FIREWORKS_PROVIDER_NAME = "fireworks_ai"
+FIREWORKS_MODEL_DETAIL_BASE = "https://app.fireworks.ai/models/fireworks/"
+FIREWORKS_SUPPLEMENTAL_MODELS: dict[str, dict[str, Any]] = {
+    "fireworks_ai/accounts/fireworks/models/deepseek-v4-pro": {
+        "litellm_provider": FIREWORKS_PROVIDER_NAME,
+        "mode": "chat",
+        "max_tokens": 1_000_000,
+        "max_input_tokens": 1_000_000,
+        "max_output_tokens": 1_000_000,
+        "input_cost_per_token": 1.74 / 1_000_000,
+        "cache_read_input_token_cost": 0.15 / 1_000_000,
+        "output_cost_per_token": 3.48 / 1_000_000,
+        "source": f"{FIREWORKS_MODEL_DETAIL_BASE}deepseek-v4-pro",
+    },
+}
 
 # Path segments that are definitely not model org names on deepinfra.com
 _DEEPINFRA_NON_ORG_PATHS = frozenset(
@@ -917,6 +934,15 @@ def scrape_deepinfra_models() -> dict[str, Any]:
     return scraped
 
 
+def scrape_fireworks_models() -> dict[str, Any]:
+    """Return Fireworks AI supplemental model entries."""
+    logger.info(
+        "Loaded %d Fireworks AI supplemental model entries",
+        len(FIREWORKS_SUPPLEMENTAL_MODELS),
+    )
+    return {key: dict(value) for key, value in FIREWORKS_SUPPLEMENTAL_MODELS.items()}
+
+
 def merge_model_data(
     base: dict[str, Any],
     *provider_data: dict[str, Any],
@@ -969,9 +995,10 @@ def main() -> None:
     # 2. Scrape provider-specific data
     together_data = scrape_together_ai_models()
     deepinfra_data = scrape_deepinfra_models()
+    fireworks_data = scrape_fireworks_models()
 
     # 3. Merge (LiteLLM is authoritative; providers fill in missing entries/fields)
-    merged = merge_model_data(base_data, together_data, deepinfra_data)
+    merged = merge_model_data(base_data, together_data, deepinfra_data, fireworks_data)
 
     # 4. Save
     save_model_data(merged, OUTPUT_FILE)
