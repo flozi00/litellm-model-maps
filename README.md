@@ -33,7 +33,7 @@ python scripts/sync_model_costs.py
 |---|---|
 | **LiteLLM (base)** | [model_prices_and_context_window.json](https://github.com/BerriAI/litellm/blob/litellm_internal_staging/model_prices_and_context_window.json) |
 | **Together AI** | [together.ai/models](https://www.together.ai/models) |
-| **Fireworks AI** | [fireworks.ai/pricing](https://fireworks.ai/pricing#serverless-pricing) |
+| **Fireworks AI** | [app.fireworks.ai/models](https://app.fireworks.ai/models/fireworks) |
 
 ## Output Format
 
