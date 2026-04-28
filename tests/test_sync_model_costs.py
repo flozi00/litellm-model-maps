@@ -868,7 +868,7 @@ class TestScrapeFireworksModels:
 
         def _detail_side_effect(slug):
             if slug == "broken-model":
-                raise RuntimeError("unexpected page shape")
+                raise ValueError("unexpected page shape")
             return detail
 
         with patch.object(

@@ -1138,9 +1138,9 @@ def scrape_fireworks_models() -> dict[str, Any]:
         logger.info("Scraping Fireworks AI model %d/%d: %s", i, len(slugs), slug)
         try:
             detail = scrape_fireworks_model_detail(slug)
-        except Exception as exc:
+        except (AttributeError, IndexError, KeyError, TypeError, ValueError) as exc:
             logger.warning(
-                "Failed to scrape Fireworks AI model %s due to unexpected error: %s",
+                "Failed to parse Fireworks AI model %s page; skipping it: %s",
                 slug,
                 exc,
             )
