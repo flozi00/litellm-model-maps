@@ -144,6 +144,25 @@ class TestSaveModelData:
         finally:
             os.unlink(tmp_path)
 
+    def test_saves_model_keys_sorted_after_sample_spec(self):
+        data = {
+            "b_model": {"litellm_provider": "openai", "mode": "chat"},
+            "sample_spec": {"litellm_provider": "openai", "mode": "chat"},
+            "a_model": {"litellm_provider": "openai", "mode": "chat"},
+        }
+        with tempfile.NamedTemporaryFile(
+            suffix=".json", mode="w", delete=False
+        ) as tmp:
+            tmp_path = tmp.name
+
+        try:
+            sync.save_model_data(data, tmp_path)
+            with open(tmp_path, encoding="utf-8") as f:
+                loaded = json.load(f)
+            assert list(loaded) == ["sample_spec", "a_model", "b_model"]
+        finally:
+            os.unlink(tmp_path)
+
 
 class TestScrapeTogetherAIModelList:
     def test_parses_model_links(self):
@@ -755,8 +774,94 @@ class TestScrapeDeepInfraModelDetail:
 
 
 class TestScrapeFireworksModels:
+    def test_parses_model_links_from_anchors(self):
+        html = """
+        <html><body>
+          <a href="/models/fireworks/kimi-k2p6">Kimi K2.6</a>
+          <a href="/models/fireworks/deepseek-v4-pro">DeepSeek V4 Pro</a>
+          <a href="/models/other/provider">Other provider</a>
+          <a href="/models/fireworks/kimi-k2p6">duplicate</a>
+        </body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            slugs = sync.scrape_fireworks_model_list()
+
+        assert "kimi-k2p6" in slugs
+        assert "deepseek-v4-pro" in slugs
+        assert "other/provider" not in slugs
+        assert slugs.count("kimi-k2p6") == 1
+
+    def test_parses_slugs_from_next_data(self):
+        html = """
+        <html><head>
+          <script id="__NEXT_DATA__" type="application/json">
+          {"props":{"pageProps":{"models":[
+            {"model":"fireworks/kimi-k2p6"},
+            {"href":"/models/fireworks/deepseek-v4-pro"}
+          ]}}}
+          </script>
+        </head><body></body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            slugs = sync.scrape_fireworks_model_list()
+
+        assert "kimi-k2p6" in slugs
+        assert "deepseek-v4-pro" in slugs
+
+    def test_scrapes_kimi_detail_page(self):
+        html = """
+        <html><body>
+          <h1>Kimi K2.6</h1>
+          <span>fireworks/kimi-k2p6</span>
+          <section>Available Serverless $0.95 / $0.16 / $4.00
+          Per 1M Tokens (input/cached input/output)</section>
+          <dl><dt>Context Length</dt><dd>262.1k tokens</dd></dl>
+          <dl><dt>Function Calling</dt><dd>Supported</dd></dl>
+        </body></html>
+        """
+        mock_response = MagicMock()
+        mock_response.text = html
+        mock_response.raise_for_status.return_value = None
+
+        with patch("requests.get", return_value=mock_response):
+            entry = sync.scrape_fireworks_model_detail("kimi-k2p6")
+
+        assert entry is not None
+        assert entry["litellm_provider"] == "fireworks_ai"
+        assert entry["mode"] == "chat"
+        assert entry["max_tokens"] == 262_144
+        assert entry["max_input_tokens"] == 262_144
+        assert entry["max_output_tokens"] == 262_144
+        assert entry["input_cost_per_token"] == pytest.approx(0.95 / 1_000_000)
+        assert entry["cache_read_input_token_cost"] == pytest.approx(0.16 / 1_000_000)
+        assert entry["output_cost_per_token"] == pytest.approx(4.00 / 1_000_000)
+        assert entry["supports_function_calling"] is True
+        assert entry["source"] == "https://fireworks.ai/models/fireworks/kimi-k2p6"
+
+    def test_scrapes_listed_models_and_adds_fireworks_keys(self):
+        detail = {
+            "litellm_provider": "fireworks_ai",
+            "mode": "chat",
+            "source": "https://fireworks.ai/models/fireworks/kimi-k2p6",
+        }
+        with patch.object(sync, "scrape_fireworks_model_list", return_value=["kimi-k2p6"]):
+            with patch.object(sync, "scrape_fireworks_model_detail", return_value=detail):
+                entries = sync.scrape_fireworks_models()
+
+        assert "fireworks_ai/accounts/fireworks/models/kimi-k2p6" in entries
+        assert "fireworks_ai/kimi-k2p6" in entries
+
     def test_includes_deepseek_v4_pro(self):
-        entries = sync.scrape_fireworks_models()
+        with patch.object(sync, "scrape_fireworks_model_list", return_value=[]):
+            entries = sync.scrape_fireworks_models()
         key = "fireworks_ai/accounts/fireworks/models/deepseek-v4-pro"
 
         assert key in entries
@@ -782,7 +887,8 @@ class TestScrapeFireworksModels:
         ],
     )
     def test_includes_kimi_k2p6(self, key):
-        entries = sync.scrape_fireworks_models()
+        with patch.object(sync, "scrape_fireworks_model_list", return_value=[]):
+            entries = sync.scrape_fireworks_models()
 
         assert key in entries
         entry = entries[key]

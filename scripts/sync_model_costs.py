@@ -51,7 +51,9 @@ DEEPINFRA_PROVIDER_NAME = "deepinfra"
 
 # Fireworks AI supplemental model data
 FIREWORKS_PROVIDER_NAME = "fireworks_ai"
-FIREWORKS_MODEL_DETAIL_BASE = "https://app.fireworks.ai/models/fireworks/"
+FIREWORKS_MODELS_URL = "https://fireworks.ai/models"
+FIREWORKS_MODEL_DETAIL_BASE = "https://fireworks.ai/models/fireworks/"
+FIREWORKS_APP_MODEL_DETAIL_BASE = "https://app.fireworks.ai/models/fireworks/"
 FIREWORKS_SUPPLEMENTAL_MODELS: dict[str, dict[str, Any]] = {
     "fireworks_ai/accounts/fireworks/models/deepseek-v4-pro": {
         "litellm_provider": FIREWORKS_PROVIDER_NAME,
@@ -62,7 +64,7 @@ FIREWORKS_SUPPLEMENTAL_MODELS: dict[str, dict[str, Any]] = {
         "input_cost_per_token": 1.74 / 1_000_000,
         "cache_read_input_token_cost": 0.15 / 1_000_000,
         "output_cost_per_token": 3.48 / 1_000_000,
-        "source": f"{FIREWORKS_MODEL_DETAIL_BASE}deepseek-v4-pro",
+        "source": f"{FIREWORKS_APP_MODEL_DETAIL_BASE}deepseek-v4-pro",
     },
     "fireworks_ai/accounts/fireworks/models/kimi-k2p6": {
         "litellm_provider": FIREWORKS_PROVIDER_NAME,
@@ -958,13 +960,201 @@ def scrape_deepinfra_models() -> dict[str, Any]:
     return scraped
 
 
+def _parse_token_count(number: str, unit: str = "") -> int | None:
+    """Parse displayed token counts such as ``262.1k`` or ``1M``."""
+    try:
+        value = float(number.replace(",", ""))
+    except ValueError:
+        return None
+
+    unit = unit.lower()
+    if unit == "m":
+        return int(round(value * 1_000_000))
+    if unit == "k":
+        tokens = value * 1_000
+        if "." in number:
+            return int(round(tokens / 1024) * 1024)
+        return int(round(tokens))
+    return int(round(value))
+
+
+def _find_fireworks_model_slugs_in_next_data(data: Any) -> list[str]:
+    """Recursively search Next.js data for Fireworks model detail page slugs."""
+    seen: set[str] = set()
+    found: list[str] = []
+
+    def _add(slug: str) -> None:
+        slug = slug.strip("/")
+        if slug and slug not in seen:
+            seen.add(slug)
+            found.append(slug)
+
+    def _walk(node: Any) -> None:
+        if isinstance(node, dict):
+            for value in node.values():
+                _walk(value)
+        elif isinstance(node, list):
+            for item in node:
+                _walk(item)
+        elif isinstance(node, str):
+            for match in re.finditer(r"/models/fireworks/([A-Za-z0-9_.-]+)", node):
+                _add(match.group(1))
+            for match in re.finditer(
+                r"\b(?:accounts/)?fireworks(?:/models)?/([A-Za-z0-9_.-]+)\b",
+                node,
+            ):
+                _add(match.group(1))
+
+    _walk(data)
+    return found
+
+
+def scrape_fireworks_model_list() -> list[str]:
+    """Scrape Fireworks model slugs from the public model library."""
+    logger.info("Scraping Fireworks AI model list from %s", FIREWORKS_MODELS_URL)
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (compatible; LiteLLM-ModelMapSync/1.0; "
+            "+https://github.com/flozi00/litellm-model-maps)"
+        )
+    }
+    try:
+        response = requests.get(
+            FIREWORKS_MODELS_URL, headers=headers, timeout=REQUEST_TIMEOUT
+        )
+        response.raise_for_status()
+    except requests.RequestException as exc:
+        logger.warning("Failed to fetch Fireworks AI model list: %s", exc)
+        return []
+
+    html = response.text
+    next_data = _extract_next_data(html)
+    if next_data:
+        next_slugs = _find_fireworks_model_slugs_in_next_data(next_data)
+        if next_slugs:
+            logger.info(
+                "Found %d Fireworks AI model slugs via __NEXT_DATA__",
+                len(next_slugs),
+            )
+            return next_slugs
+
+    soup = BeautifulSoup(html, "html.parser")
+    slugs: list[str] = []
+    for anchor in soup.find_all("a", href=True):
+        href: str = anchor["href"]
+        match = re.match(r"^/models/fireworks/([^/?#]+)$", href)
+        if match:
+            slug = match.group(1)
+            if slug not in slugs:
+                slugs.append(slug)
+
+    logger.info("Found %d Fireworks AI model slugs on model list page", len(slugs))
+    return slugs
+
+
+def scrape_fireworks_model_detail(slug: str) -> dict[str, Any] | None:
+    """Scrape pricing and metadata for a single Fireworks model detail page."""
+    url = f"{FIREWORKS_MODEL_DETAIL_BASE}{slug}"
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (compatible; LiteLLM-ModelMapSync/1.0; "
+            "+https://github.com/flozi00/litellm-model-maps)"
+        )
+    }
+    try:
+        response = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        response.raise_for_status()
+    except requests.RequestException as exc:
+        logger.warning("Failed to fetch Fireworks AI model page %s: %s", url, exc)
+        return None
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    page_text = re.sub(r"\s+", " ", soup.get_text(separator=" ", strip=True))
+
+    entry: dict[str, Any] = {
+        "litellm_provider": FIREWORKS_PROVIDER_NAME,
+        "mode": "chat",
+        "source": url,
+    }
+
+    context_match = re.search(
+        r"(?i)context\s+length\s+([0-9,.]+)\s*([kKmM]?)\s*tokens?",
+        page_text,
+    )
+    if context_match:
+        tokens = _parse_token_count(context_match.group(1), context_match.group(2))
+        if tokens and tokens > 0:
+            entry["max_tokens"] = tokens
+            entry["max_input_tokens"] = tokens
+            entry["max_output_tokens"] = tokens
+
+    price_triplet = re.search(
+        r"\$\s*([0-9.]+)\s*/\s*\$\s*([0-9.]+)\s*/\s*\$\s*([0-9.]+)"
+        r".{0,120}?(?:input\s*/\s*cached\s+input\s*/\s*output)",
+        page_text,
+        re.IGNORECASE,
+    )
+    if price_triplet:
+        entry["input_cost_per_token"] = float(price_triplet.group(1)) / 1_000_000
+        entry["cache_read_input_token_cost"] = (
+            float(price_triplet.group(2)) / 1_000_000
+        )
+        entry["output_cost_per_token"] = float(price_triplet.group(3)) / 1_000_000
+    else:
+        input_match = re.search(r"(?i)\binput\b\s*\$?\s*([0-9.]+)", page_text)
+        cache_match = re.search(
+            r"(?i)\bcached\s+input\b\s*\$?\s*([0-9.]+)",
+            page_text,
+        )
+        output_match = re.search(r"(?i)\boutput\b\s*\$?\s*([0-9.]+)", page_text)
+        if input_match:
+            entry["input_cost_per_token"] = float(input_match.group(1)) / 1_000_000
+        if cache_match:
+            entry["cache_read_input_token_cost"] = (
+                float(cache_match.group(1)) / 1_000_000
+            )
+        if output_match:
+            entry["output_cost_per_token"] = float(output_match.group(1)) / 1_000_000
+
+    if re.search(r"(?i)function\s+calling\s+supported", page_text):
+        entry["supports_function_calling"] = True
+
+    return entry
+
+
+def _fireworks_entries_for_slug(slug: str, detail: dict[str, Any]) -> dict[str, Any]:
+    """Build the LiteLLM Fireworks keys for a scraped Fireworks model slug."""
+    return {
+        f"fireworks_ai/accounts/fireworks/models/{slug}": dict(detail),
+        f"fireworks_ai/{slug}": dict(detail),
+    }
+
+
 def scrape_fireworks_models() -> dict[str, Any]:
-    """Return Fireworks AI supplemental model entries."""
+    """Fetch Fireworks AI models and return LiteLLM-format model entries."""
+    scraped: dict[str, Any] = {}
+    slugs = scrape_fireworks_model_list()
+    for i, slug in enumerate(slugs, 1):
+        logger.info("Scraping Fireworks AI model %d/%d: %s", i, len(slugs), slug)
+        detail = scrape_fireworks_model_detail(slug)
+        if detail:
+            scraped.update(_fireworks_entries_for_slug(slug, detail))
+
+        if i < len(slugs):
+            time.sleep(REQUEST_DELAY)
+
+    logger.info("Scraped %d Fireworks AI model entries via HTML", len(scraped))
     logger.info(
         "Loaded %d Fireworks AI supplemental model entries",
         len(FIREWORKS_SUPPLEMENTAL_MODELS),
     )
-    return {key: dict(value) for key, value in FIREWORKS_SUPPLEMENTAL_MODELS.items()}
+    for key, value in FIREWORKS_SUPPLEMENTAL_MODELS.items():
+        if key not in scraped:
+            scraped[key] = dict(value)
+        else:
+            for field, field_value in value.items():
+                scraped[key].setdefault(field, field_value)
+    return scraped
 
 
 def merge_model_data(
@@ -1007,8 +1197,13 @@ def merge_model_data(
 
 def save_model_data(data: dict[str, Any], path: str) -> None:
     """Save the model data to a JSON file."""
+    sorted_data = {
+        key: data[key]
+        for key in (["sample_spec"] if "sample_spec" in data else [])
+        + sorted(key for key in data if key != "sample_spec")
+    }
     with open(path, "w", encoding="utf-8") as fh:
-        json.dump(data, fh, indent=4, ensure_ascii=False)
+        json.dump(sorted_data, fh, indent=4, ensure_ascii=False)
     logger.info("Saved %d model entries to %s", len(data), path)
 
 
