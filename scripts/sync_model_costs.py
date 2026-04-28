@@ -1136,7 +1136,15 @@ def scrape_fireworks_models() -> dict[str, Any]:
     slugs = scrape_fireworks_model_list()
     for i, slug in enumerate(slugs, 1):
         logger.info("Scraping Fireworks AI model %d/%d: %s", i, len(slugs), slug)
-        detail = scrape_fireworks_model_detail(slug)
+        try:
+            detail = scrape_fireworks_model_detail(slug)
+        except Exception as exc:
+            logger.warning(
+                "Failed to scrape Fireworks AI model %s due to unexpected error: %s",
+                slug,
+                exc,
+            )
+            detail = None
         if detail:
             scraped.update(_fireworks_entries_for_slug(slug, detail))
 

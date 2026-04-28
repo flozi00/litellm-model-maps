@@ -859,6 +859,30 @@ class TestScrapeFireworksModels:
         assert "fireworks_ai/accounts/fireworks/models/kimi-k2p6" in entries
         assert "fireworks_ai/kimi-k2p6" in entries
 
+    def test_continues_when_one_fireworks_detail_page_raises(self):
+        detail = {
+            "litellm_provider": "fireworks_ai",
+            "mode": "chat",
+            "source": "https://fireworks.ai/models/fireworks/kimi-k2p6",
+        }
+
+        def _detail_side_effect(slug):
+            if slug == "broken-model":
+                raise RuntimeError("unexpected page shape")
+            return detail
+
+        with patch.object(
+            sync, "scrape_fireworks_model_list", return_value=["broken-model", "kimi-k2p6"]
+        ):
+            with patch.object(
+                sync, "scrape_fireworks_model_detail", side_effect=_detail_side_effect
+            ):
+                entries = sync.scrape_fireworks_models()
+
+        assert "fireworks_ai/accounts/fireworks/models/kimi-k2p6" in entries
+        assert "fireworks_ai/kimi-k2p6" in entries
+        assert "fireworks_ai/accounts/fireworks/models/broken-model" not in entries
+
     def test_includes_deepseek_v4_pro(self):
         with patch.object(sync, "scrape_fireworks_model_list", return_value=[]):
             entries = sync.scrape_fireworks_models()
