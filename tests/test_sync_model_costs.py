@@ -773,3 +773,26 @@ class TestScrapeFireworksModels:
             entry["source"]
             == "https://app.fireworks.ai/models/fireworks/deepseek-v4-pro"
         )
+
+    @pytest.mark.parametrize(
+        "key",
+        [
+            "fireworks_ai/accounts/fireworks/models/kimi-k2p6",
+            "fireworks_ai/kimi-k2p6",
+        ],
+    )
+    def test_includes_kimi_k2p6(self, key):
+        entries = sync.scrape_fireworks_models()
+
+        assert key in entries
+        entry = entries[key]
+        assert entry["litellm_provider"] == "fireworks_ai"
+        assert entry["mode"] == "chat"
+        assert entry["max_tokens"] == 262_144
+        assert entry["max_input_tokens"] == 262_144
+        assert entry["max_output_tokens"] == 262_144
+        assert entry["input_cost_per_token"] == pytest.approx(0.95 / 1_000_000)
+        assert entry["cache_read_input_token_cost"] == pytest.approx(0.16 / 1_000_000)
+        assert entry["output_cost_per_token"] == pytest.approx(4.00 / 1_000_000)
+        assert entry["supports_function_calling"] is True
+        assert entry["source"] == "https://fireworks.ai/models/fireworks/kimi-k2p6"

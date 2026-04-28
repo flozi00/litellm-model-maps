@@ -64,6 +64,30 @@ FIREWORKS_SUPPLEMENTAL_MODELS: dict[str, dict[str, Any]] = {
         "output_cost_per_token": 3.48 / 1_000_000,
         "source": f"{FIREWORKS_MODEL_DETAIL_BASE}deepseek-v4-pro",
     },
+    "fireworks_ai/accounts/fireworks/models/kimi-k2p6": {
+        "litellm_provider": FIREWORKS_PROVIDER_NAME,
+        "mode": "chat",
+        "max_tokens": 262_144,
+        "max_input_tokens": 262_144,
+        "max_output_tokens": 262_144,
+        "input_cost_per_token": 0.95 / 1_000_000,
+        "cache_read_input_token_cost": 0.16 / 1_000_000,
+        "output_cost_per_token": 4.00 / 1_000_000,
+        "source": "https://fireworks.ai/models/fireworks/kimi-k2p6",
+        "supports_function_calling": True,
+    },
+    "fireworks_ai/kimi-k2p6": {
+        "litellm_provider": FIREWORKS_PROVIDER_NAME,
+        "mode": "chat",
+        "max_tokens": 262_144,
+        "max_input_tokens": 262_144,
+        "max_output_tokens": 262_144,
+        "input_cost_per_token": 0.95 / 1_000_000,
+        "cache_read_input_token_cost": 0.16 / 1_000_000,
+        "output_cost_per_token": 4.00 / 1_000_000,
+        "source": "https://fireworks.ai/models/fireworks/kimi-k2p6",
+        "supports_function_calling": True,
+    },
 }
 
 # Path segments that are definitely not model org names on deepinfra.com
