@@ -12912,6 +12912,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/nvidia/llama-nemotron-embed-vl-1b-v2": {
         "litellm_provider": "deepinfra",
         "mode": "embedding",
@@ -16050,6 +16055,14 @@
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/nous-hermes-llama2-7b"
     },
+    "fireworks_ai/accounts/fireworks/models/nvidia-nemotron-3-nano-omni-30b-a3b": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/nvidia-nemotron-3-nano-omni-30b-a3b",
+        "max_tokens": 262144,
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144
+    },
     "fireworks_ai/accounts/fireworks/models/nvidia-nemotron-3-super-120b-a12b-fp8": {
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
@@ -18560,6 +18573,14 @@
         "max_tokens": 4096,
         "max_input_tokens": 4096,
         "max_output_tokens": 4096
+    },
+    "fireworks_ai/nvidia-nemotron-3-nano-omni-30b-a3b": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/nvidia-nemotron-3-nano-omni-30b-a3b",
+        "max_tokens": 262144,
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144
     },
     "fireworks_ai/nvidia-nemotron-3-super-120b-a12b-fp8": {
         "litellm_provider": "fireworks_ai",
@@ -37374,11 +37395,6 @@
         "supports_response_schema": true,
         "supports_tool_choice": true
     },
-    "together_ai/minimax-speech-2-6-turbo": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/minimax-speech-2-6-turbo"
-    },
     "together_ai/mistralai/Mistral-7B-Instruct-v0.1": {
         "litellm_provider": "together_ai",
         "mode": "chat",
@@ -37444,6 +37460,14 @@
         "litellm_provider": "together_ai",
         "mode": "chat",
         "source": "https://www.together.ai/models/kimi-k26",
+        "max_tokens": 256000,
+        "max_input_tokens": 256000,
+        "max_output_tokens": 256000
+    },
+    "together_ai/nvidia-nemotron-3-nano-omni": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/nvidia-nemotron-3-nano-omni",
         "max_tokens": 256000,
         "max_input_tokens": 256000,
         "max_output_tokens": 256000
