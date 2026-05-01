@@ -11944,11 +11944,6 @@
         "supports_tool_choice": false,
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/PaddlePaddle/PaddleOCR-VL-0.9B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/PrunaAI/p-image": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -12221,6 +12216,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/Qwen/Qwen3.5-9B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Qwen/Qwen3.6-35B-A3B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -12256,8 +12256,7 @@
         "output_cost_per_token": 7.5e-07,
         "litellm_provider": "deepinfra",
         "mode": "chat",
-        "supports_tool_choice": false,
-        "source": "https://api.deepinfra.com/v1/openai/models"
+        "supports_tool_choice": false
     },
     "deepinfra/Wan-AI/Wan2.6-Image-Edit": {
         "litellm_provider": "deepinfra",
@@ -12272,16 +12271,6 @@
     "deepinfra/Wan-AI/Wan2.7-Image-Edit": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/allenai/Olmo-3.1-32B-Instruct": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/allenai/olmOCR-2-7B-1025": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/allenai/olmOCR-7B-0725-FP8": {
@@ -12752,8 +12741,7 @@
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "supports_tool_choice": true,
-        "supports_function_calling": true,
-        "source": "https://api.deepinfra.com/v1/openai/models"
+        "supports_function_calling": true
     },
     "deepinfra/meta-llama/Meta-Llama-3.1-70B-Instruct": {
         "max_tokens": 131072,
@@ -12870,8 +12858,7 @@
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "supports_tool_choice": true,
-        "supports_function_calling": true,
-        "source": "https://api.deepinfra.com/v1/openai/models"
+        "supports_function_calling": true
     },
     "deepinfra/moonshotai/Kimi-K2-Instruct": {
         "max_tokens": 131072,
@@ -12915,8 +12902,7 @@
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "supports_tool_choice": true,
-        "supports_function_calling": true,
-        "source": "https://api.deepinfra.com/v1/openai/models"
+        "supports_function_calling": true
     },
     "deepinfra/nvidia/Llama-3.3-Nemotron-Super-49B-v1.5": {
         "max_tokens": 131072,
@@ -12931,11 +12917,6 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
