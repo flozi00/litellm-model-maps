@@ -17132,6 +17132,14 @@
         "max_input_tokens": 262144,
         "max_output_tokens": 262144
     },
+    "fireworks_ai/accounts/fireworks/models/qwen3p6-27b": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/qwen3p6-27b",
+        "max_tokens": 262144,
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144
+    },
     "fireworks_ai/accounts/fireworks/models/qwen3p6-35b-a3b": {
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
@@ -19457,6 +19465,14 @@
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/qwen3p5-9b",
+        "max_tokens": 262144,
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144
+    },
+    "fireworks_ai/qwen3p6-27b": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/qwen3p6-27b",
         "max_tokens": 262144,
         "max_input_tokens": 262144,
         "max_output_tokens": 262144
@@ -26279,7 +26295,7 @@
         "supports_web_search": true,
         "supports_none_reasoning_effort": true,
         "supports_xhigh_reasoning_effort": true,
-        "supports_minimal_reasoning_effort": true
+        "supports_minimal_reasoning_effort": false
     },
     "gpt-5.5-2026-04-23": {
         "cache_read_input_token_cost": 5e-07,
@@ -26327,7 +26343,7 @@
         "supports_web_search": true,
         "supports_none_reasoning_effort": true,
         "supports_xhigh_reasoning_effort": true,
-        "supports_minimal_reasoning_effort": true
+        "supports_minimal_reasoning_effort": false
     },
     "gpt-5.5-pro": {
         "cache_read_input_token_cost": 3e-06,
@@ -26370,7 +26386,8 @@
         "supports_web_search": true,
         "supports_none_reasoning_effort": false,
         "supports_xhigh_reasoning_effort": true,
-        "supports_minimal_reasoning_effort": true
+        "supports_minimal_reasoning_effort": false,
+        "supports_low_reasoning_effort": false
     },
     "gpt-5.5-pro-2026-04-23": {
         "cache_read_input_token_cost": 3e-06,
@@ -26413,7 +26430,8 @@
         "supports_web_search": true,
         "supports_none_reasoning_effort": false,
         "supports_xhigh_reasoning_effort": true,
-        "supports_minimal_reasoning_effort": true
+        "supports_minimal_reasoning_effort": false,
+        "supports_low_reasoning_effort": false
     },
     "gpt-audio": {
         "input_cost_per_audio_token": 3.2e-05,
