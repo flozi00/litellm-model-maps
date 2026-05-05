@@ -816,6 +816,7 @@
         "supports_vision": true,
         "supports_prompt_caching": false,
         "supports_reasoning": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_tool_choice": true
     },
     "anthropic.claude-opus-4-1-20250805-v1:0": {
@@ -892,6 +893,7 @@
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_response_schema": true,
         "supports_tool_choice": true,
         "supports_vision": true,
@@ -1045,6 +1047,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -1530,6 +1533,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -6181,6 +6185,7 @@
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_response_schema": true,
         "supports_tool_choice": true,
         "supports_vision": true
@@ -6283,6 +6288,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -9361,6 +9367,7 @@
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_response_schema": true,
         "supports_tool_choice": true,
         "supports_vision": true,
@@ -9388,6 +9395,7 @@
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_response_schema": true,
         "supports_tool_choice": true,
         "supports_vision": true,
@@ -9409,6 +9417,7 @@
             "search_context_size_low": 0.01,
             "search_context_size_medium": 0.01
         },
+        "supports_adaptive_thinking": true,
         "supports_assistant_prefill": false,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -9442,6 +9451,7 @@
             "search_context_size_low": 0.01,
             "search_context_size_medium": 0.01
         },
+        "supports_adaptive_thinking": true,
         "supports_assistant_prefill": false,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -9475,6 +9485,7 @@
             "search_context_size_low": 0.01,
             "search_context_size_medium": 0.01
         },
+        "supports_adaptive_thinking": true,
         "supports_assistant_prefill": false,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -9509,6 +9520,7 @@
             "search_context_size_low": 0.01,
             "search_context_size_medium": 0.01
         },
+        "supports_adaptive_thinking": true,
         "supports_assistant_prefill": false,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -9660,6 +9672,7 @@
             "search_context_size_low": 0.01,
             "search_context_size_medium": 0.01
         },
+        "supports_adaptive_thinking": true,
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -9667,6 +9680,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -10964,6 +10978,7 @@
         "supports_assistant_prefill": true,
         "supports_function_calling": true,
         "supports_reasoning": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_tool_choice": true
     },
     "databricks/databricks-claude-sonnet-4": {
@@ -12368,6 +12383,16 @@
     "deepinfra/Wan-AI/Wan2.7-Image-Edit": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/XiaomiMiMo/MiMo-V2.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/XiaomiMiMo/MiMo-V2.5-Pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/allenai/olmOCR-7B-0725-FP8": {
@@ -13848,6 +13873,7 @@
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
@@ -13999,6 +14025,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -23226,7 +23253,8 @@
         ],
         "supports_function_calling": true,
         "supports_parallel_function_calling": true,
-        "supports_vision": true
+        "supports_vision": true,
+        "supports_minimal_reasoning_effort": true
     },
     "github_copilot/claude-opus-4.6-fast": {
         "litellm_provider": "github_copilot",
@@ -23598,6 +23626,7 @@
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
@@ -23754,6 +23783,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -23799,7 +23829,8 @@
         "mode": "chat",
         "output_cost_per_token": 2.5e-05,
         "supports_function_calling": true,
-        "supports_vision": true
+        "supports_vision": true,
+        "supports_minimal_reasoning_effort": true
     },
     "gmi/anthropic/claude-sonnet-4": {
         "input_cost_per_token": 3e-06,
@@ -33311,6 +33342,7 @@
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_tool_choice": true,
@@ -33332,6 +33364,7 @@
         "supports_function_calling": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -33354,6 +33387,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "supports_xhigh_reasoning_effort": true,
@@ -33427,6 +33461,7 @@
         "supports_function_calling": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 159,
@@ -34963,7 +34998,8 @@
         "mode": "responses",
         "supports_web_search": true,
         "supports_reasoning": false,
-        "supports_function_calling": true
+        "supports_function_calling": true,
+        "supports_minimal_reasoning_effort": true
     },
     "perplexity/anthropic/claude-opus-4-6": {
         "litellm_provider": "perplexity",
@@ -38168,6 +38204,7 @@
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
@@ -38324,6 +38361,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -38902,6 +38940,7 @@
         "output_cost_per_token": 2.5e-05,
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_function_calling": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
@@ -40094,6 +40133,7 @@
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
@@ -40120,6 +40160,7 @@
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
+        "supports_minimal_reasoning_effort": true,
         "supports_pdf_input": true,
         "supports_prompt_caching": true,
         "supports_reasoning": true,
@@ -40369,6 +40410,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
@@ -40396,6 +40438,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
