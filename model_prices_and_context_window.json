@@ -17303,6 +17303,14 @@
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/toppy-m-7b"
     },
+    "fireworks_ai/accounts/fireworks/models/voyage-4-nano": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/voyage-4-nano",
+        "max_tokens": 41000,
+        "max_input_tokens": 41000,
+        "max_output_tokens": 41000
+    },
     "fireworks_ai/accounts/fireworks/models/whisper-v3": {
         "max_tokens": 4096,
         "max_input_tokens": 4096,
@@ -19629,6 +19637,14 @@
         "max_tokens": 32768,
         "max_input_tokens": 32768,
         "max_output_tokens": 32768
+    },
+    "fireworks_ai/voyage-4-nano": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/voyage-4-nano",
+        "max_tokens": 41000,
+        "max_input_tokens": 41000,
+        "max_output_tokens": 41000
     },
     "fireworks_ai/whisper-v3": {
         "litellm_provider": "fireworks_ai",
