@@ -12739,6 +12739,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/google/gemma-4-31B-it-turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/intfloat/e5-base-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
