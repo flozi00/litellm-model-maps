@@ -12278,6 +12278,11 @@
         "supports_tool_choice": true,
         "supports_function_calling": true
     },
+    "deepinfra/Qwen/Qwen3-TTS-VoiceDesign": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Qwen/Qwen3-VL-235B-A22B-Instruct": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -12338,6 +12343,16 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/ResembleAI/chatterbox-multilingual": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ResembleAI/chatterbox-turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Sao10K/L3-8B-Lunaris-v1-Turbo": {
         "max_tokens": 8192,
         "max_input_tokens": 8192,
@@ -12391,6 +12406,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/XiaomiMiMo/MiMo-V2.5-Pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/XiaomiMiMo/MiMo-V2.5-tts-voicedesign": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -13009,6 +13029,16 @@
         "supports_tool_choice": true,
         "supports_function_calling": true
     },
+    "deepinfra/mistralai/Voxtral-Mini-3B-2507": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/mistralai/Voxtral-Small-24B-2507": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/moonshotai/Kimi-K2-Instruct": {
         "max_tokens": 131072,
         "max_input_tokens": 131072,
@@ -13126,6 +13156,16 @@
         "supports_function_calling": true,
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/openai/whisper-large-v3": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/openai/whisper-large-v3-turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/sentence-transformers/all-MiniLM-L12-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -13157,6 +13197,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/sentence-transformers/paraphrase-MiniLM-L6-v2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/sesame/csm-1b": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -15969,6 +16014,14 @@
         "source": "https://fireworks.ai/models/fireworks/ministral-3-8b-instruct-2512",
         "supports_function_calling": true
     },
+    "fireworks_ai/accounts/fireworks/models/mirothinker-1p7": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/mirothinker-1p7",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000
+    },
     "fireworks_ai/accounts/fireworks/models/mistral-7b": {
         "max_tokens": 32768,
         "max_input_tokens": 32768,
@@ -18534,6 +18587,14 @@
         "max_input_tokens": 256000,
         "max_output_tokens": 256000,
         "supports_function_calling": true
+    },
+    "fireworks_ai/mirothinker-1p7": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/mirothinker-1p7",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000
     },
     "fireworks_ai/mistral-7b": {
         "litellm_provider": "fireworks_ai",
@@ -27917,6 +27978,35 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true
+    },
+    "jp.anthropic.claude-sonnet-4-6": {
+        "cache_creation_input_token_cost": 4.125e-06,
+        "cache_read_input_token_cost": 3.3e-07,
+        "input_cost_per_token": 3.3e-06,
+        "litellm_provider": "bedrock_converse",
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 64000,
+        "max_tokens": 64000,
+        "mode": "chat",
+        "output_cost_per_token": 1.65e-05,
+        "search_context_cost_per_query": {
+            "search_context_size_high": 0.01,
+            "search_context_size_low": 0.01,
+            "search_context_size_medium": 0.01
+        },
+        "supports_assistant_prefill": true,
+        "supports_computer_use": true,
+        "supports_function_calling": true,
+        "supports_pdf_input": true,
+        "supports_prompt_caching": true,
+        "supports_reasoning": true,
+        "supports_response_schema": true,
+        "supports_max_reasoning_effort": true,
+        "supports_tool_choice": true,
+        "supports_vision": true,
+        "tool_use_system_prompt_tokens": 346,
+        "supports_native_structured_output": true,
+        "supports_minimal_reasoning_effort": true
     },
     "kimi-k2-thinking-251104": {
         "input_cost_per_token": 0.0,
@@ -37444,14 +37534,6 @@
         "supports_response_schema": true,
         "supports_tool_choice": true
     },
-    "together_ai/Qwen/Qwen3-Coder-Next-FP8": {
-        "litellm_provider": "together_ai",
-        "mode": "embedding",
-        "source": "https://www.together.ai/models/qwen3-coder-next",
-        "max_tokens": 262000,
-        "max_input_tokens": 262000,
-        "max_output_tokens": 262000
-    },
     "together_ai/Qwen/Qwen3-Next-80B-A3B-Instruct": {
         "input_cost_per_token": 1.5e-07,
         "litellm_provider": "together_ai",
@@ -37823,6 +37905,14 @@
         "supports_parallel_function_calling": true,
         "supports_response_schema": true,
         "supports_tool_choice": true
+    },
+    "together_ai/pearl-ai/gemma-4-31b-it-pearl": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/gemma-4-31b-it-pearl",
+        "max_tokens": 32000,
+        "max_input_tokens": 32000,
+        "max_output_tokens": 32000
     },
     "together_ai/rime-labs/rime-mist-v3-omni": {
         "litellm_provider": "together_ai",
