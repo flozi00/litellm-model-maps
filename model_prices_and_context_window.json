@@ -38059,11 +38059,6 @@
         "max_input_tokens": 64000,
         "max_output_tokens": 64000
     },
-    "together_ai/google/gemini-3-pro-image": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/nano-banana-pro"
-    },
     "together_ai/google/gemma-4-31B-it": {
         "litellm_provider": "together_ai",
         "mode": "chat",
@@ -38162,6 +38157,11 @@
         "supports_parallel_function_calling": true,
         "supports_response_schema": true,
         "supports_tool_choice": true
+    },
+    "together_ai/minimax/speech-2.8-turbo": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/minimax-speech-28"
     },
     "together_ai/mistralai/Mistral-7B-Instruct-v0.1": {
         "litellm_provider": "together_ai",
