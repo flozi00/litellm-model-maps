@@ -927,6 +927,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -1052,6 +1053,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "anthropic.claude-v1": {
@@ -1447,6 +1449,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -1538,6 +1541,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "aws_polly/generative": {
@@ -6216,6 +6220,7 @@
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 159,
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -6292,6 +6297,7 @@
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "azure_ai/cohere-rerank-v3-english": {
@@ -9806,6 +9812,7 @@
             "us": 1.1,
             "fast": 6.0
         },
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -9841,7 +9848,8 @@
             "fast": 6.0
         },
         "supports_max_reasoning_effort": true,
-        "supports_minimal_reasoning_effort": true
+        "supports_minimal_reasoning_effort": true,
+        "supports_output_config": true
     },
     "claude-opus-4-7": {
         "cache_creation_input_token_cost": 6.25e-06,
@@ -9876,7 +9884,8 @@
             "us": 1.1,
             "fast": 6.0
         },
-        "supports_minimal_reasoning_effort": true
+        "supports_minimal_reasoning_effort": true,
+        "supports_output_config": true
     },
     "claude-opus-4-7-20260416": {
         "cache_creation_input_token_cost": 6.25e-06,
@@ -9911,7 +9920,8 @@
             "us": 1.1,
             "fast": 6.0
         },
-        "supports_minimal_reasoning_effort": true
+        "supports_minimal_reasoning_effort": true,
+        "supports_output_config": true
     },
     "claude-sonnet-4-20250514": {
         "deprecation_date": "2026-05-14",
@@ -10058,6 +10068,7 @@
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "cloudflare/@cf/meta/llama-2-7b-chat-fp16": {
@@ -12831,8 +12842,7 @@
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "supports_tool_choice": true,
-        "supports_function_calling": true,
-        "source": "https://api.deepinfra.com/v1/openai/models"
+        "supports_function_calling": true
     },
     "deepinfra/deepseek-ai/DeepSeek-R1-Distill-Llama-70B": {
         "max_tokens": 131072,
@@ -14240,6 +14250,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -14361,6 +14372,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "eu.deepseek.v3.2": {
@@ -14678,11 +14690,6 @@
         "litellm_provider": "fireworks_ai",
         "output_cost_per_token": 2e-07
     },
-    "fireworks_ai/SSD-1B": {
-        "litellm_provider": "fireworks_ai",
-        "mode": "chat",
-        "source": "https://fireworks.ai/models/fireworks/SSD-1B"
-    },
     "fireworks_ai/WhereIsAI/UAE-Large-V1": {
         "input_cost_per_token": 1.6e-08,
         "litellm_provider": "fireworks_ai-embedding-models",
@@ -14708,8 +14715,7 @@
         "input_cost_per_token": 1.3e-10,
         "output_cost_per_token": 1.3e-10,
         "litellm_provider": "fireworks_ai",
-        "mode": "image_generation",
-        "source": "https://fireworks.ai/models/fireworks/SSD-1B"
+        "mode": "image_generation"
     },
     "fireworks_ai/accounts/fireworks/models/chronos-hermes-13b-v2": {
         "max_tokens": 4096,
@@ -15648,16 +15654,19 @@
         "supports_function_calling": true
     },
     "fireworks_ai/accounts/fireworks/models/glm-5p1": {
-        "litellm_provider": "fireworks_ai",
-        "mode": "chat",
-        "source": "https://fireworks.ai/models/fireworks/glm-5p1",
-        "max_tokens": 202000,
-        "max_input_tokens": 202000,
-        "max_output_tokens": 202000,
-        "input_cost_per_token": 1.4e-06,
         "cache_read_input_token_cost": 2.6e-07,
+        "input_cost_per_token": 1.4e-06,
+        "litellm_provider": "fireworks_ai",
+        "max_input_tokens": 202800,
+        "max_output_tokens": 202800,
+        "max_tokens": 202800,
+        "mode": "chat",
         "output_cost_per_token": 4.4e-06,
-        "supports_function_calling": true
+        "source": "https://fireworks.ai/models/fireworks/glm-5p1",
+        "supports_function_calling": false,
+        "supports_reasoning": true,
+        "supports_response_schema": false,
+        "supports_tool_choice": false
     },
     "fireworks_ai/accounts/fireworks/models/gpt-oss-120b": {
         "input_cost_per_token": 1.5e-07,
@@ -18365,16 +18374,19 @@
         "supports_function_calling": true
     },
     "fireworks_ai/glm-5p1": {
-        "litellm_provider": "fireworks_ai",
-        "mode": "chat",
-        "source": "https://fireworks.ai/models/fireworks/glm-5p1",
-        "max_tokens": 202000,
-        "max_input_tokens": 202000,
-        "max_output_tokens": 202000,
-        "input_cost_per_token": 1.4e-06,
         "cache_read_input_token_cost": 2.6e-07,
+        "input_cost_per_token": 1.4e-06,
+        "litellm_provider": "fireworks_ai",
+        "max_input_tokens": 202800,
+        "max_output_tokens": 202800,
+        "max_tokens": 202800,
+        "mode": "chat",
         "output_cost_per_token": 4.4e-06,
-        "supports_function_calling": true
+        "source": "https://fireworks.ai/models/fireworks/glm-5p1",
+        "supports_function_calling": false,
+        "supports_reasoning": true,
+        "supports_response_schema": false,
+        "supports_tool_choice": false
     },
     "fireworks_ai/gpt-oss-120b": {
         "litellm_provider": "fireworks_ai",
@@ -24196,6 +24208,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -24321,6 +24334,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "gmi/MiniMaxAI/MiniMax-M2.1": {
@@ -28459,6 +28473,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "kimi-k2-thinking-251104": {
@@ -35717,14 +35732,16 @@
         "mode": "responses",
         "supports_web_search": true,
         "supports_reasoning": false,
-        "supports_function_calling": true
+        "supports_function_calling": true,
+        "supports_output_config": true
     },
     "perplexity/anthropic/claude-opus-4-7": {
         "litellm_provider": "perplexity",
         "mode": "responses",
         "supports_web_search": true,
         "supports_reasoning": false,
-        "supports_function_calling": true
+        "supports_function_calling": true,
+        "supports_output_config": true
     },
     "perplexity/anthropic/claude-sonnet-4-5": {
         "litellm_provider": "perplexity",
@@ -36280,6 +36297,24 @@
         "source": "https://www.recraft.ai/docs#pricing",
         "supported_endpoints": [
             "/v1/images/generations"
+        ]
+    },
+    "reducto/parse-legacy": {
+        "litellm_provider": "reducto",
+        "mode": "ocr",
+        "ocr_cost_per_credit": 0.015,
+        "source": "https://reducto.ai/pricing",
+        "supported_endpoints": [
+            "/v1/ocr"
+        ]
+    },
+    "reducto/parse-v3": {
+        "litellm_provider": "reducto",
+        "mode": "ocr",
+        "ocr_cost_per_credit": 0.015,
+        "source": "https://reducto.ai/pricing",
+        "supported_endpoints": [
+            "/v1/ocr"
         ]
     },
     "replicate/anthropic/claude-3.5-haiku": {
@@ -38144,6 +38179,14 @@
         "max_input_tokens": 1000,
         "max_output_tokens": 1000
     },
+    "together_ai/Qwen/Qwen3.7-Max": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/qwen37-max",
+        "max_tokens": 1000,
+        "max_input_tokens": 1000,
+        "max_output_tokens": 1000
+    },
     "together_ai/Wan-AI/Wan2.6-image": {
         "litellm_provider": "together_ai",
         "mode": "image_generation",
@@ -38156,14 +38199,6 @@
         "mode": "embedding",
         "output_cost_per_token": 0.0,
         "output_vector_size": 768
-    },
-    "together_ai/black-forest-labs/FLUX.2-pro": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/flux-2-pro",
-        "max_tokens": 32000,
-        "max_input_tokens": 32000,
-        "max_output_tokens": 32000
     },
     "together_ai/deepseek-ai/DeepSeek-R1": {
         "input_cost_per_token": 3e-06,
@@ -38962,6 +38997,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -39087,6 +39123,7 @@
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
         "supports_native_structured_output": true,
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "us.deepseek.r1-v1:0": {
@@ -40916,6 +40953,7 @@
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -40944,6 +40982,7 @@
         "supports_tool_choice": true,
         "supports_vision": true,
         "tool_use_system_prompt_tokens": 346,
+        "supports_output_config": true,
         "supports_max_reasoning_effort": true,
         "supports_minimal_reasoning_effort": true
     },
@@ -41140,6 +41179,7 @@
             "search_context_size_low": 0.01,
             "search_context_size_medium": 0.01
         },
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "vertex_ai/claude-sonnet-4-6@default": {
@@ -41168,6 +41208,7 @@
             "search_context_size_low": 0.01,
             "search_context_size_medium": 0.01
         },
+        "supports_output_config": true,
         "supports_minimal_reasoning_effort": true
     },
     "vertex_ai/claude-sonnet-4@20250514": {
