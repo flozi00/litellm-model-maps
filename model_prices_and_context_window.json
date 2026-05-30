@@ -12856,6 +12856,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/anthropic/claude-opus-4-8": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/anthropic/claude-sonnet-4-6": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
