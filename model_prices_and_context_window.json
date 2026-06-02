@@ -30365,6 +30365,21 @@
         "supports_tool_choice": true,
         "supports_vision": true
     },
+    "mistral/ministral-8b-latest": {
+        "input_cost_per_token": 1.5e-07,
+        "litellm_provider": "mistral",
+        "max_input_tokens": 262144,
+        "max_output_tokens": 262144,
+        "max_tokens": 262144,
+        "mode": "chat",
+        "output_cost_per_token": 1.5e-07,
+        "source": "https://mistral.ai/pricing",
+        "supports_assistant_prefill": true,
+        "supports_function_calling": true,
+        "supports_response_schema": true,
+        "supports_tool_choice": true,
+        "supports_vision": true
+    },
     "mistral/mistral-embed": {
         "input_cost_per_token": 1e-07,
         "litellm_provider": "mistral",
@@ -38521,14 +38536,6 @@
         "output_cost_per_token": 0.0,
         "output_vector_size": 768
     },
-    "together_ai/black-forest-labs/FLUX.2-pro": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/flux-2-pro",
-        "max_tokens": 32000,
-        "max_input_tokens": 32000,
-        "max_output_tokens": 32000
-    },
     "together_ai/deepseek-ai/DeepSeek-R1": {
         "input_cost_per_token": 3e-06,
         "litellm_provider": "together_ai",
@@ -38703,6 +38710,14 @@
         "supports_parallel_function_calling": true,
         "supports_response_schema": true,
         "supports_tool_choice": true
+    },
+    "together_ai/minimax-m3": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/minimax-m3",
+        "max_tokens": 1000,
+        "max_input_tokens": 1000,
+        "max_output_tokens": 1000
     },
     "together_ai/minimax/speech-2.8-turbo": {
         "litellm_provider": "together_ai",
