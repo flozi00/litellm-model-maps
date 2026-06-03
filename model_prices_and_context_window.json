@@ -538,7 +538,10 @@
         "max_tokens": 8192,
         "mode": "embedding",
         "output_cost_per_token": 0.0,
-        "output_vector_size": 1024
+        "output_vector_size": 1024,
+        "provider_specific_entry": {
+            "bedrock_invocation_schema": "titan_v2"
+        }
     },
     "amazon.titan-image-generator-v1": {
         "input_cost_per_image": 0.0,
@@ -1408,6 +1411,22 @@
         "supports_response_schema": true,
         "supports_tool_choice": true,
         "supports_vision": true
+    },
+    "apiserpent/deep_search": {
+        "input_cost_per_query": 0.0006,
+        "litellm_provider": "apiserpent",
+        "mode": "search",
+        "metadata": {
+            "notes": "APISerpent deep search (/api/search), multi-engine (Google, Bing, Yahoo, DuckDuckGo). Pricing: $0.60/1k searches."
+        }
+    },
+    "apiserpent/search": {
+        "input_cost_per_query": 0.0006,
+        "litellm_provider": "apiserpent",
+        "mode": "search",
+        "metadata": {
+            "notes": "APISerpent quick search (/api/search/quick), multi-engine (Google, Bing, Yahoo, DuckDuckGo). Pricing: $0.60/1k searches."
+        }
     },
     "assemblyai/best": {
         "input_cost_per_second": 3.333e-05,
@@ -8633,6 +8652,7 @@
     },
     "bedrock/us-gov-east-1/anthropic.claude-haiku-4-5-20251001-v1:0": {
         "cache_creation_input_token_cost": 1.5e-06,
+        "cache_creation_input_token_cost_above_1hr": 2.4e-06,
         "cache_read_input_token_cost": 1.2e-07,
         "input_cost_per_token": 1.2e-06,
         "litellm_provider": "bedrock",
@@ -8654,15 +8674,16 @@
         "supports_pdf_input": true
     },
     "bedrock/us-gov-east-1/anthropic.claude-sonnet-4-5-20250929-v1:0": {
-        "cache_creation_input_token_cost": 4.125e-06,
-        "cache_read_input_token_cost": 3.3e-07,
-        "input_cost_per_token": 3.3e-06,
+        "cache_creation_input_token_cost": 4.5e-06,
+        "cache_creation_input_token_cost_above_1hr": 7.2e-06,
+        "cache_read_input_token_cost": 3.6e-07,
+        "input_cost_per_token": 3.6e-06,
         "litellm_provider": "bedrock",
         "max_input_tokens": 200000,
         "max_output_tokens": 8192,
         "max_tokens": 8192,
         "mode": "chat",
-        "output_cost_per_token": 1.65e-05,
+        "output_cost_per_token": 1.8e-05,
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -8675,15 +8696,16 @@
         "supports_native_structured_output": true
     },
     "bedrock/us-gov-east-1/claude-sonnet-4-5-20250929-v1:0": {
-        "cache_creation_input_token_cost": 4.125e-06,
-        "cache_read_input_token_cost": 3.3e-07,
-        "input_cost_per_token": 3.3e-06,
+        "cache_creation_input_token_cost": 4.5e-06,
+        "cache_creation_input_token_cost_above_1hr": 7.2e-06,
+        "cache_read_input_token_cost": 3.6e-07,
+        "input_cost_per_token": 3.6e-06,
         "litellm_provider": "bedrock",
         "max_input_tokens": 200000,
         "max_output_tokens": 8192,
         "max_tokens": 8192,
         "mode": "chat",
-        "output_cost_per_token": 1.65e-05,
+        "output_cost_per_token": 1.8e-05,
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -8828,6 +8850,7 @@
     },
     "bedrock/us-gov-west-1/anthropic.claude-haiku-4-5-20251001-v1:0": {
         "cache_creation_input_token_cost": 1.5e-06,
+        "cache_creation_input_token_cost_above_1hr": 2.4e-06,
         "cache_read_input_token_cost": 1.2e-07,
         "input_cost_per_token": 1.2e-06,
         "litellm_provider": "bedrock",
@@ -8849,15 +8872,16 @@
         "supports_pdf_input": true
     },
     "bedrock/us-gov-west-1/anthropic.claude-sonnet-4-5-20250929-v1:0": {
-        "cache_creation_input_token_cost": 4.125e-06,
-        "cache_read_input_token_cost": 3.3e-07,
-        "input_cost_per_token": 3.3e-06,
+        "cache_creation_input_token_cost": 4.5e-06,
+        "cache_creation_input_token_cost_above_1hr": 7.2e-06,
+        "cache_read_input_token_cost": 3.6e-07,
+        "input_cost_per_token": 3.6e-06,
         "litellm_provider": "bedrock",
         "max_input_tokens": 200000,
         "max_output_tokens": 8192,
         "max_tokens": 8192,
         "mode": "chat",
-        "output_cost_per_token": 1.65e-05,
+        "output_cost_per_token": 1.8e-05,
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -8870,15 +8894,16 @@
         "supports_native_structured_output": true
     },
     "bedrock/us-gov-west-1/claude-sonnet-4-5-20250929-v1:0": {
-        "cache_creation_input_token_cost": 4.125e-06,
-        "cache_read_input_token_cost": 3.3e-07,
-        "input_cost_per_token": 3.3e-06,
+        "cache_creation_input_token_cost": 4.5e-06,
+        "cache_creation_input_token_cost_above_1hr": 7.2e-06,
+        "cache_read_input_token_cost": 3.6e-07,
+        "input_cost_per_token": 3.6e-06,
         "litellm_provider": "bedrock",
         "max_input_tokens": 200000,
         "max_output_tokens": 8192,
         "max_tokens": 8192,
         "mode": "chat",
-        "output_cost_per_token": 1.65e-05,
+        "output_cost_per_token": 1.8e-05,
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -12431,6 +12456,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/MiniMaxAI/MiniMax-M2.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/MiniMaxAI/MiniMax-M2.7": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -38968,19 +38998,21 @@
         "supports_video_input": true
     },
     "us-gov.anthropic.claude-sonnet-4-5-20250929-v1:0": {
-        "cache_creation_input_token_cost": 4.125e-06,
-        "cache_read_input_token_cost": 3.3e-07,
-        "input_cost_per_token": 3.3e-06,
-        "input_cost_per_token_above_200k_tokens": 6.6e-06,
-        "output_cost_per_token_above_200k_tokens": 2.475e-05,
-        "cache_creation_input_token_cost_above_200k_tokens": 8.25e-06,
-        "cache_read_input_token_cost_above_200k_tokens": 6.6e-07,
+        "cache_creation_input_token_cost": 4.5e-06,
+        "cache_creation_input_token_cost_above_1hr": 7.2e-06,
+        "cache_read_input_token_cost": 3.6e-07,
+        "input_cost_per_token": 3.6e-06,
+        "input_cost_per_token_above_200k_tokens": 7.2e-06,
+        "output_cost_per_token_above_200k_tokens": 2.7e-05,
+        "cache_creation_input_token_cost_above_200k_tokens": 9e-06,
+        "cache_creation_input_token_cost_above_1hr_above_200k_tokens": 1.44e-05,
+        "cache_read_input_token_cost_above_200k_tokens": 7.2e-07,
         "litellm_provider": "bedrock_converse",
         "max_input_tokens": 200000,
         "max_output_tokens": 64000,
         "max_tokens": 64000,
         "mode": "chat",
-        "output_cost_per_token": 1.65e-05,
+        "output_cost_per_token": 1.8e-05,
         "supports_assistant_prefill": true,
         "supports_computer_use": true,
         "supports_function_calling": true,
@@ -42314,6 +42346,22 @@
         "source": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
         "supports_multimodal": true,
         "uses_embed_content": true
+    },
+    "vertex_ai/google/gemma-4-26b-a4b-it-maas": {
+        "input_cost_per_token": 1.5e-07,
+        "litellm_provider": "vertex_ai-openai_models",
+        "max_input_tokens": 256000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "chat",
+        "output_cost_per_token": 6e-07,
+        "source": "https://cloud.google.com/vertex-ai/generative-ai/docs/maas/google/gemma-4-26b-a4b-it",
+        "supported_regions": [
+            "global"
+        ],
+        "supports_function_calling": true,
+        "supports_tool_choice": true,
+        "supports_vision": true
     },
     "vertex_ai/imagegeneration@006": {
         "litellm_provider": "vertex_ai-image-models",
