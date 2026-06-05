@@ -9206,6 +9206,58 @@
         "supports_response_schema": true,
         "supports_tool_choice": true
     },
+    "bedrock_mantle/openai.gpt-5.4": {
+        "input_cost_per_token": 2.75e-06,
+        "cache_read_input_token_cost": 2.75e-07,
+        "output_cost_per_token": 1.65e-05,
+        "litellm_provider": "bedrock_mantle",
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "responses",
+        "supported_endpoints": [
+            "/v1/responses"
+        ],
+        "supported_modalities": [
+            "text",
+            "image"
+        ],
+        "supported_output_modalities": [
+            "text"
+        ],
+        "supports_function_calling": true,
+        "supports_prompt_caching": true,
+        "supports_reasoning": true,
+        "supports_response_schema": true,
+        "supports_tool_choice": true,
+        "supports_vision": true
+    },
+    "bedrock_mantle/openai.gpt-5.5": {
+        "input_cost_per_token": 5.5e-06,
+        "cache_read_input_token_cost": 5.5e-07,
+        "output_cost_per_token": 3.3e-05,
+        "litellm_provider": "bedrock_mantle",
+        "max_input_tokens": 272000,
+        "max_output_tokens": 128000,
+        "max_tokens": 128000,
+        "mode": "responses",
+        "supported_endpoints": [
+            "/v1/responses"
+        ],
+        "supported_modalities": [
+            "text",
+            "image"
+        ],
+        "supported_output_modalities": [
+            "text"
+        ],
+        "supports_function_calling": true,
+        "supports_prompt_caching": true,
+        "supports_reasoning": true,
+        "supports_response_schema": true,
+        "supports_tool_choice": true,
+        "supports_vision": true
+    },
     "bedrock_mantle/openai.gpt-oss-120b": {
         "input_cost_per_token": 1.5e-07,
         "output_cost_per_token": 6e-07,
@@ -12742,22 +12794,7 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3.5-0.8B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-122B-A10B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/Qwen/Qwen3.5-27B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-2B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -12768,11 +12805,6 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/Qwen/Qwen3.5-397B-A17B": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3.5-4B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -13006,8 +13038,7 @@
         "output_cost_per_token": 6e-07,
         "litellm_provider": "deepinfra",
         "mode": "chat",
-        "supports_tool_choice": false,
-        "source": "https://api.deepinfra.com/v1/openai/models"
+        "supports_tool_choice": false
     },
     "deepinfra/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B": {
         "max_tokens": 131072,
@@ -13350,8 +13381,7 @@
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "supports_tool_choice": true,
-        "supports_function_calling": true,
-        "source": "https://api.deepinfra.com/v1/openai/models"
+        "supports_function_calling": true
     },
     "deepinfra/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo": {
         "max_tokens": 131072,
@@ -13529,6 +13559,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/nvidia/NVIDIA-Nemotron-Nano-9B-v2": {
         "max_tokens": 131072,
         "max_input_tokens": 131072,
@@ -13538,8 +13573,7 @@
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "supports_tool_choice": true,
-        "supports_function_calling": true,
-        "source": "https://api.deepinfra.com/v1/openai/models"
+        "supports_function_calling": true
     },
     "deepinfra/nvidia/Nemotron-3-Nano-30B-A3B": {
         "litellm_provider": "deepinfra",
@@ -13547,6 +13581,16 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/Nemotron-3.5-ASR-Streaming-Multilingual-0.6b": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/Nemotron-Content-Safety-3.5": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -16673,6 +16717,24 @@
         "max_output_tokens": 262000,
         "supports_function_calling": true
     },
+    "fireworks_ai/accounts/fireworks/models/nemotron-3-ultra-bf16": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/nemotron-3-ultra-bf16",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000,
+        "supports_function_calling": true
+    },
+    "fireworks_ai/accounts/fireworks/models/nemotron-3-ultra-nvfp4": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/nemotron-3-ultra-nvfp4",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000,
+        "supports_function_calling": true
+    },
     "fireworks_ai/accounts/fireworks/models/nemotron-nano-3-30b-a3b": {
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
@@ -19198,6 +19260,24 @@
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/nemotron-3-super-120b-a12b-bf16",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000,
+        "supports_function_calling": true
+    },
+    "fireworks_ai/nemotron-3-ultra-bf16": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/nemotron-3-ultra-bf16",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000,
+        "supports_function_calling": true
+    },
+    "fireworks_ai/nemotron-3-ultra-nvfp4": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/nemotron-3-ultra-nvfp4",
         "max_tokens": 262000,
         "max_input_tokens": 262000,
         "max_output_tokens": 262000,
@@ -37636,19 +37716,122 @@
     },
     "snowflake/claude-3-5-sonnet": {
         "litellm_provider": "snowflake",
-        "max_input_tokens": 18000,
-        "max_output_tokens": 8192,
-        "max_tokens": 8192,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 16384,
+        "max_tokens": 16384,
         "mode": "chat",
-        "supports_computer_use": true
+        "input_cost_per_token": 3e-06,
+        "output_cost_per_token": 1.5e-05,
+        "cache_read_input_token_cost": 3e-07,
+        "supports_computer_use": true,
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
+    },
+    "snowflake/claude-3-7-sonnet": {
+        "max_tokens": 16384,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 3e-06,
+        "output_cost_per_token": 1.5e-05,
+        "cache_read_input_token_cost": 3e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_reasoning": true,
+        "supports_response_schema": true
+    },
+    "snowflake/claude-4-opus": {
+        "max_tokens": 16384,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 5e-06,
+        "output_cost_per_token": 2.5e-05,
+        "cache_read_input_token_cost": 5e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_reasoning": true,
+        "supports_response_schema": true
+    },
+    "snowflake/claude-4-sonnet": {
+        "max_tokens": 16384,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 3e-06,
+        "output_cost_per_token": 1.5e-05,
+        "cache_read_input_token_cost": 3e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
+    },
+    "snowflake/claude-haiku-4-5": {
+        "max_tokens": 16384,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 1e-06,
+        "output_cost_per_token": 5e-06,
+        "cache_read_input_token_cost": 1e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
+    },
+    "snowflake/claude-sonnet-4-5": {
+        "max_tokens": 16384,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 3e-06,
+        "output_cost_per_token": 1.5e-05,
+        "cache_read_input_token_cost": 3e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
+    },
+    "snowflake/claude-sonnet-4-6": {
+        "max_tokens": 16384,
+        "max_input_tokens": 200000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 3e-06,
+        "output_cost_per_token": 1.5e-05,
+        "cache_read_input_token_cost": 3e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
     },
     "snowflake/deepseek-r1": {
         "litellm_provider": "snowflake",
-        "max_input_tokens": 32768,
-        "max_output_tokens": 8192,
-        "max_tokens": 8192,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 16384,
+        "max_tokens": 16384,
         "mode": "chat",
-        "supports_reasoning": true
+        "input_cost_per_token": 1.35e-06,
+        "output_cost_per_token": 5.4e-06,
+        "supports_reasoning": true,
+        "supports_system_messages": true
     },
     "snowflake/gemma-7b": {
         "litellm_provider": "snowflake",
@@ -37702,23 +37885,34 @@
     "snowflake/llama3.1-405b": {
         "litellm_provider": "snowflake",
         "max_input_tokens": 128000,
-        "max_output_tokens": 8192,
-        "max_tokens": 8192,
-        "mode": "chat"
+        "max_output_tokens": 16384,
+        "max_tokens": 16384,
+        "mode": "chat",
+        "input_cost_per_token": 1.2e-06,
+        "output_cost_per_token": 1.2e-06,
+        "supports_function_calling": true,
+        "supports_system_messages": true
     },
     "snowflake/llama3.1-70b": {
         "litellm_provider": "snowflake",
         "max_input_tokens": 128000,
-        "max_output_tokens": 8192,
-        "max_tokens": 8192,
-        "mode": "chat"
+        "max_output_tokens": 16384,
+        "max_tokens": 16384,
+        "mode": "chat",
+        "input_cost_per_token": 7.2e-07,
+        "output_cost_per_token": 7.2e-07,
+        "supports_function_calling": true,
+        "supports_system_messages": true
     },
     "snowflake/llama3.1-8b": {
         "litellm_provider": "snowflake",
         "max_input_tokens": 128000,
-        "max_output_tokens": 8192,
-        "max_tokens": 8192,
-        "mode": "chat"
+        "max_output_tokens": 16384,
+        "max_tokens": 16384,
+        "mode": "chat",
+        "input_cost_per_token": 2.4e-07,
+        "output_cost_per_token": 2.4e-07,
+        "supports_system_messages": true
     },
     "snowflake/llama3.2-1b": {
         "litellm_provider": "snowflake",
@@ -37735,11 +37929,26 @@
         "mode": "chat"
     },
     "snowflake/llama3.3-70b": {
-        "litellm_provider": "snowflake",
+        "max_tokens": 16384,
         "max_input_tokens": 128000,
-        "max_output_tokens": 8192,
-        "max_tokens": 8192,
-        "mode": "chat"
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 7.2e-07,
+        "output_cost_per_token": 7.2e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_system_messages": true
+    },
+    "snowflake/llama4-maverick": {
+        "max_tokens": 16384,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 2.4e-07,
+        "output_cost_per_token": 9.7e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_system_messages": true
     },
     "snowflake/mistral-7b": {
         "litellm_provider": "snowflake",
@@ -37758,9 +37967,14 @@
     "snowflake/mistral-large2": {
         "litellm_provider": "snowflake",
         "max_input_tokens": 128000,
-        "max_output_tokens": 8192,
-        "max_tokens": 8192,
-        "mode": "chat"
+        "max_output_tokens": 16384,
+        "max_tokens": 16384,
+        "mode": "chat",
+        "input_cost_per_token": 2e-06,
+        "output_cost_per_token": 6e-06,
+        "supports_function_calling": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
     },
     "snowflake/mixtral-8x7b": {
         "litellm_provider": "snowflake",
@@ -37768,6 +37982,61 @@
         "max_output_tokens": 8192,
         "max_tokens": 8192,
         "mode": "chat"
+    },
+    "snowflake/openai-gpt-4.1": {
+        "max_tokens": 16384,
+        "max_input_tokens": 300000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 2e-06,
+        "output_cost_per_token": 8e-06,
+        "cache_read_input_token_cost": 5e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
+    },
+    "snowflake/openai-gpt-5": {
+        "max_tokens": 16384,
+        "max_input_tokens": 300000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 1.25e-06,
+        "output_cost_per_token": 1e-05,
+        "cache_read_input_token_cost": 1.25e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_vision": true,
+        "supports_prompt_caching": true,
+        "supports_system_messages": true,
+        "supports_reasoning": true,
+        "supports_response_schema": true
+    },
+    "snowflake/openai-gpt-5-mini": {
+        "max_tokens": 16384,
+        "max_input_tokens": 1000000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 3e-07,
+        "output_cost_per_token": 1.2e-06,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
+    },
+    "snowflake/openai-gpt-5-nano": {
+        "max_tokens": 16384,
+        "max_input_tokens": 5000000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 1.5e-07,
+        "output_cost_per_token": 6e-07,
+        "litellm_provider": "snowflake",
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_system_messages": true,
+        "supports_response_schema": true
     },
     "snowflake/reka-core": {
         "litellm_provider": "snowflake",
@@ -37790,6 +38059,22 @@
         "max_tokens": 8192,
         "mode": "chat"
     },
+    "snowflake/snowflake-arctic-embed-l-v2.0": {
+        "max_tokens": 8192,
+        "max_input_tokens": 8192,
+        "input_cost_per_token": 7e-08,
+        "output_cost_per_token": 0.0,
+        "litellm_provider": "snowflake",
+        "mode": "embedding"
+    },
+    "snowflake/snowflake-arctic-embed-m-v2.0": {
+        "max_tokens": 8192,
+        "max_input_tokens": 8192,
+        "input_cost_per_token": 7e-08,
+        "output_cost_per_token": 0.0,
+        "litellm_provider": "snowflake",
+        "mode": "embedding"
+    },
     "snowflake/snowflake-llama-3.1-405b": {
         "litellm_provider": "snowflake",
         "max_input_tokens": 8000,
@@ -37798,11 +38083,15 @@
         "mode": "chat"
     },
     "snowflake/snowflake-llama-3.3-70b": {
+        "max_tokens": 16384,
+        "max_input_tokens": 128000,
+        "max_output_tokens": 16384,
+        "input_cost_per_token": 7.2e-07,
+        "output_cost_per_token": 7.2e-07,
         "litellm_provider": "snowflake",
-        "max_input_tokens": 8000,
-        "max_output_tokens": 8192,
-        "max_tokens": 8192,
-        "mode": "chat"
+        "mode": "chat",
+        "supports_function_calling": true,
+        "supports_system_messages": true
     },
     "sora-2": {
         "litellm_provider": "openai",
@@ -38730,11 +39019,6 @@
         "max_input_tokens": 256000,
         "max_output_tokens": 256000
     },
-    "together_ai/google/veo-3.0": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/google-veo-3-0"
-    },
     "together_ai/llama-4-maverick": {
         "litellm_provider": "together_ai",
         "mode": "chat",
@@ -38911,13 +39195,18 @@
         "max_input_tokens": 256000,
         "max_output_tokens": 256000
     },
-    "together_ai/nvidia-nemotron-3-super": {
+    "together_ai/nvidia/nemotron-3-ultra-550b-a55b": {
         "litellm_provider": "together_ai",
         "mode": "chat",
-        "source": "https://www.together.ai/models/nvidia-nemotron-3-super",
+        "source": "https://www.together.ai/models/nvidia-nemotron-3-ultra",
         "max_tokens": 1000,
         "max_input_tokens": 1000,
         "max_output_tokens": 1000
+    },
+    "together_ai/nvidia/nemotron-3.5-asr-streaming-0.6b": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/nvidia-nemotron-35-asr"
     },
     "together_ai/openai/gpt-image-1.5": {
         "litellm_provider": "together_ai",
