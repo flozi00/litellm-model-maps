@@ -16415,9 +16415,9 @@
         "max_tokens": 262000,
         "max_input_tokens": 262000,
         "max_output_tokens": 262000,
-        "input_cost_per_token": 1.2e-06,
-        "cache_read_input_token_cost": 6e-07,
-        "output_cost_per_token": 1.2e-06,
+        "input_cost_per_token": 9.499999999999999e-07,
+        "cache_read_input_token_cost": 1.9e-07,
+        "output_cost_per_token": 4e-06,
         "supports_function_calling": true
     },
     "fireworks_ai/accounts/fireworks/models/llama-guard-2-8b": {
@@ -19154,9 +19154,9 @@
         "max_tokens": 262000,
         "max_input_tokens": 262000,
         "max_output_tokens": 262000,
-        "input_cost_per_token": 1.2e-06,
-        "cache_read_input_token_cost": 6e-07,
-        "output_cost_per_token": 1.2e-06,
+        "input_cost_per_token": 9.499999999999999e-07,
+        "cache_read_input_token_cost": 1.9e-07,
+        "output_cost_per_token": 4e-06,
         "supports_function_calling": true
     },
     "fireworks_ai/llama-guard-2-8b": {
@@ -39857,14 +39857,6 @@
         "max_input_tokens": 1000,
         "max_output_tokens": 1000
     },
-    "together_ai/gemma-3-27b": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/gemma-3-27b",
-        "max_tokens": 64000,
-        "max_input_tokens": 64000,
-        "max_output_tokens": 64000
-    },
     "together_ai/google/gemma-4-31B-it": {
         "litellm_provider": "together_ai",
         "mode": "chat",
@@ -40034,6 +40026,14 @@
         "litellm_provider": "together_ai",
         "mode": "chat",
         "source": "https://www.together.ai/models/kimi-k26",
+        "max_tokens": 256000,
+        "max_input_tokens": 256000,
+        "max_output_tokens": 256000
+    },
+    "together_ai/moonshotai/Kimi-K2.7-Code": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/kimi-k27-code",
         "max_tokens": 256000,
         "max_input_tokens": 256000,
         "max_output_tokens": 256000
