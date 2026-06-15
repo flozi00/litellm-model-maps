@@ -39849,13 +39849,13 @@
         "max_input_tokens": 512000,
         "max_output_tokens": 512000
     },
-    "together_ai/deepseek-v4-flash": {
+    "together_ai/gemma-3-27b": {
         "litellm_provider": "together_ai",
         "mode": "chat",
-        "source": "https://www.together.ai/models/deepseek-v4-flash",
-        "max_tokens": 1000,
-        "max_input_tokens": 1000,
-        "max_output_tokens": 1000
+        "source": "https://www.together.ai/models/gemma-3-27b",
+        "max_tokens": 64000,
+        "max_input_tokens": 64000,
+        "max_output_tokens": 64000
     },
     "together_ai/google/gemma-4-31B-it": {
         "litellm_provider": "together_ai",
