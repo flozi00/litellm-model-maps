@@ -12790,6 +12790,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/MiniMaxAI/MiniMax-M2.7-Turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/NousResearch/Hermes-3-Llama-3.1-405B": {
         "max_tokens": 131072,
         "max_input_tokens": 131072,
@@ -39789,6 +39794,11 @@
         "output_cost_per_token": 0.0,
         "output_vector_size": 768
     },
+    "together_ai/cartesia/sonic-3.5": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/cartesia-sonic-35"
+    },
     "together_ai/deepseek-ai/DeepSeek-R1": {
         "input_cost_per_token": 3e-06,
         "litellm_provider": "together_ai",
@@ -39848,14 +39858,6 @@
         "max_tokens": 512000,
         "max_input_tokens": 512000,
         "max_output_tokens": 512000
-    },
-    "together_ai/gemma-3-27b": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/gemma-3-27b",
-        "max_tokens": 64000,
-        "max_input_tokens": 64000,
-        "max_output_tokens": 64000
     },
     "together_ai/google/gemma-4-31B-it": {
         "litellm_provider": "together_ai",
