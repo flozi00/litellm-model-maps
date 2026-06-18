@@ -12839,7 +12839,32 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/Bria/blur_background": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/erase_foreground": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/expand": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Bria/fibo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/fibo_edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/remove_background": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -12864,7 +12889,22 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/ByteDance/Seedance-1.5-Pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/ByteDance/Seedance-2.0": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/ByteDance/Seedream-4": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/FastVideo/LTX2-Distilled-Diffusers": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -12919,7 +12959,27 @@
         "supports_tool_choice": false,
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/Pixverse/Pixverse-6-T2V": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Pixverse/Pixverse-T2V": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Pixverse/Pixverse-T2V-HD": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/PrunaAI/p-image": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/PrunaAI/p-video": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -12934,6 +12994,11 @@
         "mode": "chat",
         "supports_tool_choice": true,
         "supports_function_calling": true
+    },
+    "deepinfra/Qwen/Qwen-Image-Edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/Qwen/Qwen-Image-Max": {
         "litellm_provider": "deepinfra",
@@ -13131,6 +13196,11 @@
         "supports_tool_choice": true,
         "supports_function_calling": true
     },
+    "deepinfra/Qwen/Qwen3-TTS": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Qwen/Qwen3-TTS-VoiceDesign": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -13223,7 +13293,17 @@
         "mode": "chat",
         "supports_tool_choice": false
     },
+    "deepinfra/Wan-AI/Wan2.2-T2V-A14B": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Wan-AI/Wan2.6-T2I": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Wan-AI/Wan2.6-T2V": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -13234,6 +13314,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/XiaomiMiMo/MiMo-V2.5-Pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/XiaomiMiMo/MiMo-V2.5-tts": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -13307,6 +13392,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/black-forest-labs/FLUX-1-Redux-dev": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/black-forest-labs/FLUX-1-dev": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
@@ -13345,6 +13435,16 @@
     "deepinfra/black-forest-labs/FLUX-2-pro": {
         "litellm_provider": "deepinfra",
         "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/black-forest-labs/FLUX.1-Kontext-dev": {
+        "litellm_provider": "deepinfra",
+        "mode": "image_generation",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/bosonai/HiggsAudioV2.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/deepseek-ai/DeepSeek-R1": {
@@ -13603,6 +13703,21 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/google/veo-3.1": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/veo-3.1-fast": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/hexgrad/Kokoro-82M": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/intfloat/e5-base-v2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -13619,6 +13734,21 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/intfloat/multilingual-e5-large-instruct": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/inworld-ai/realtime-tts-1.5-max": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/inworld-ai/realtime-tts-1.5-mini": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/inworld-ai/realtime-tts-2": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -13884,6 +14014,16 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/moonshotai/Kimi-K2.7-Code": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/Cosmos3-Nano": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/nvidia/Cosmos3-Super": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -17029,9 +17169,6 @@
         "max_tokens": 196000,
         "max_input_tokens": 196000,
         "max_output_tokens": 196000,
-        "input_cost_per_token": 3e-07,
-        "cache_read_input_token_cost": 3e-08,
-        "output_cost_per_token": 1.2e-06,
         "supports_function_calling": true
     },
     "fireworks_ai/accounts/fireworks/models/minimax-m2p7": {
@@ -18357,9 +18494,12 @@
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/qwen3p6-plus",
-        "input_cost_per_token": 5e-07,
-        "cache_read_input_token_cost": 1.0000000000000001e-07,
-        "output_cost_per_token": 3e-06,
+        "supports_function_calling": true
+    },
+    "fireworks_ai/accounts/fireworks/models/qwen3p7-max": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/qwen3p7-max",
         "supports_function_calling": true
     },
     "fireworks_ai/accounts/fireworks/models/qwen3p7-plus": {
@@ -18524,6 +18664,22 @@
         "max_tokens": 40960,
         "max_input_tokens": 40960,
         "max_output_tokens": 40960
+    },
+    "fireworks_ai/accounts/fireworks/models/voyage-multimodal-3-5": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/voyage-multimodal-3-5",
+        "max_tokens": 32768,
+        "max_input_tokens": 32768,
+        "max_output_tokens": 32768
+    },
+    "fireworks_ai/accounts/fireworks/models/voyage-rerank-2-5": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/voyage-rerank-2-5",
+        "max_tokens": 32768,
+        "max_input_tokens": 32768,
+        "max_output_tokens": 32768
     },
     "fireworks_ai/accounts/fireworks/models/whisper-v3": {
         "max_tokens": 4096,
@@ -19717,9 +19873,6 @@
         "max_tokens": 196000,
         "max_input_tokens": 196000,
         "max_output_tokens": 196000,
-        "input_cost_per_token": 3e-07,
-        "cache_read_input_token_cost": 3e-08,
-        "output_cost_per_token": 1.2e-06,
         "supports_function_calling": true
     },
     "fireworks_ai/minimax-m2p7": {
@@ -20793,9 +20946,12 @@
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/qwen3p6-plus",
-        "input_cost_per_token": 5e-07,
-        "cache_read_input_token_cost": 1.0000000000000001e-07,
-        "output_cost_per_token": 3e-06,
+        "supports_function_calling": true
+    },
+    "fireworks_ai/qwen3p7-max": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/qwen3p7-max",
         "supports_function_calling": true
     },
     "fireworks_ai/qwen3p7-plus": {
@@ -20946,6 +21102,22 @@
         "max_tokens": 40960,
         "max_input_tokens": 40960,
         "max_output_tokens": 40960
+    },
+    "fireworks_ai/voyage-multimodal-3-5": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/voyage-multimodal-3-5",
+        "max_tokens": 32768,
+        "max_input_tokens": 32768,
+        "max_output_tokens": 32768
+    },
+    "fireworks_ai/voyage-rerank-2-5": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/voyage-rerank-2-5",
+        "max_tokens": 32768,
+        "max_input_tokens": 32768,
+        "max_output_tokens": 32768
     },
     "fireworks_ai/yi-34b-200k-capybara": {
         "litellm_provider": "fireworks_ai",
@@ -40381,14 +40553,6 @@
         "max_input_tokens": 512000,
         "max_output_tokens": 512000
     },
-    "together_ai/glm-52": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/glm-52",
-        "max_tokens": 1000,
-        "max_input_tokens": 1000,
-        "max_output_tokens": 1000
-    },
     "together_ai/google/gemma-4-31B-it": {
         "litellm_provider": "together_ai",
         "mode": "chat",
@@ -40693,6 +40857,14 @@
         "max_tokens": 200000,
         "max_input_tokens": 200000,
         "max_output_tokens": 200000
+    },
+    "together_ai/zai-org/GLM-5.2": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/glm-52",
+        "max_tokens": 1000,
+        "max_input_tokens": 1000,
+        "max_output_tokens": 1000
     },
     "tts-1": {
         "input_cost_per_character": 1.5e-05,
