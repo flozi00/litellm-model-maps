@@ -17672,6 +17672,14 @@
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/openorca-7b"
     },
+    "fireworks_ai/accounts/fireworks/models/paddleocr-vl-1-6": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/paddleocr-vl-1-6",
+        "max_tokens": 131000,
+        "max_input_tokens": 131000,
+        "max_output_tokens": 131000
+    },
     "fireworks_ai/accounts/fireworks/models/phi-2-3b": {
         "max_tokens": 2048,
         "max_input_tokens": 2048,
@@ -18709,6 +18717,14 @@
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/voyage-4",
+        "max_tokens": 40960,
+        "max_input_tokens": 40960,
+        "max_output_tokens": 40960
+    },
+    "fireworks_ai/accounts/fireworks/models/voyage-4-large": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/voyage-4-large",
         "max_tokens": 40960,
         "max_input_tokens": 40960,
         "max_output_tokens": 40960
@@ -20457,6 +20473,14 @@
         "max_input_tokens": 32768,
         "max_output_tokens": 32768
     },
+    "fireworks_ai/paddleocr-vl-1-6": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/paddleocr-vl-1-6",
+        "max_tokens": 131000,
+        "max_input_tokens": 131000,
+        "max_output_tokens": 131000
+    },
     "fireworks_ai/phi-2-3b": {
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
@@ -21285,6 +21309,14 @@
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
         "source": "https://fireworks.ai/models/fireworks/voyage-4",
+        "max_tokens": 40960,
+        "max_input_tokens": 40960,
+        "max_output_tokens": 40960
+    },
+    "fireworks_ai/voyage-4-large": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/voyage-4-large",
         "max_tokens": 40960,
         "max_input_tokens": 40960,
         "max_output_tokens": 40960
