@@ -17253,7 +17253,7 @@
         "supports_reasoning": true,
         "supports_response_schema": true,
         "supports_tool_choice": true,
-        "supports_vision": false
+        "supports_vision": true
     },
     "fireworks_ai/accounts/fireworks/models/ministral-3-14b-instruct-2512": {
         "max_tokens": 256000,
@@ -20111,7 +20111,7 @@
         "supports_reasoning": true,
         "supports_response_schema": true,
         "supports_tool_choice": true,
-        "supports_vision": false
+        "supports_vision": true
     },
     "fireworks_ai/ministral-3-14b-instruct-2512": {
         "litellm_provider": "fireworks_ai",
