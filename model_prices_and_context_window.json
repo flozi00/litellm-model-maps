@@ -14220,11 +14220,6 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/stepfun-ai/Step-3.5-Flash": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/stepfun-ai/Step-3.7-Flash": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -41096,6 +41091,11 @@
         "max_input_tokens": 1000,
         "max_output_tokens": 1000
     },
+    "together_ai/nvidia/nemotron-3.5-asr-streaming-0.6b": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/nvidia-nemotron-35-asr"
+    },
     "together_ai/openai/gpt-image-1.5": {
         "litellm_provider": "together_ai",
         "mode": "image_generation",
@@ -41192,14 +41192,6 @@
         "supports_parallel_function_calling": true,
         "supports_reasoning": true,
         "supports_tool_choice": true
-    },
-    "together_ai/zai-org/GLM-5": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/glm-5",
-        "max_tokens": 202000,
-        "max_input_tokens": 202000,
-        "max_output_tokens": 202000
     },
     "together_ai/zai-org/GLM-5.1": {
         "litellm_provider": "together_ai",
