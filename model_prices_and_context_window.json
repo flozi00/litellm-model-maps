@@ -13439,27 +13439,12 @@
         "mode": "embedding",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-Embedding-0.6B-batch": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/Qwen/Qwen3-Embedding-4B": {
         "litellm_provider": "deepinfra",
         "mode": "embedding",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/Qwen/Qwen3-Embedding-4B-batch": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/Qwen/Qwen3-Embedding-8B": {
-        "litellm_provider": "deepinfra",
-        "mode": "embedding",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/Qwen/Qwen3-Embedding-8B-batch": {
         "litellm_provider": "deepinfra",
         "mode": "embedding",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -13749,6 +13734,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/bosonai/HiggsAudioV2.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/deepreinforce-ai/Ornith-1.0-35B": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
