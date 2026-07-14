@@ -14205,11 +14205,6 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
-    "deepinfra/FastVideo/LTX-2.3-Distilled-Diffusers": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/Gryphe/MythoMax-L2-13b": {
         "max_tokens": 4096,
         "max_input_tokens": 4096,
