@@ -11146,6 +11146,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_tool_choice": true,
         "supports_vision": true
     },
@@ -11173,6 +11174,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_tool_choice": true,
         "supports_vision": true
     },
@@ -11226,6 +11228,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "supports_output_config": true
@@ -11253,6 +11256,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "supports_output_config": true
@@ -11281,6 +11285,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "provider_specific_entry": {
@@ -11315,6 +11320,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "provider_specific_entry": {
@@ -11349,6 +11355,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_sampling_params": false,
         "supports_tool_choice": true,
         "supports_vision": true,
@@ -11385,6 +11392,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_sampling_params": false,
         "supports_tool_choice": true,
         "supports_vision": true,
@@ -11421,6 +11429,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_sampling_params": false,
         "supports_tool_choice": true,
         "supports_vision": true,
@@ -11492,6 +11501,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_tool_choice": true,
         "supports_vision": true
     },
@@ -11523,6 +11533,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_tool_choice": true,
         "supports_vision": true,
         "supports_web_search": true
@@ -11578,6 +11589,7 @@
         "supports_prompt_caching": true,
         "supports_reasoning": true,
         "supports_response_schema": true,
+        "supports_native_structured_output": true,
         "supports_max_reasoning_effort": true,
         "supports_tool_choice": true,
         "supports_vision": true,
@@ -15000,6 +15012,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/google/gemma-4-31B-it-turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/gemma-4-E4B-it": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -24422,6 +24439,37 @@
         },
         "gemini_native_audio": true
     },
+    "gemini-omni-flash-preview": {
+        "input_cost_per_audio_token": 1.5e-06,
+        "input_cost_per_token": 1.5e-06,
+        "litellm_provider": "vertex_ai-language-models",
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 65535,
+        "max_tokens": 65535,
+        "mode": "chat",
+        "output_cost_per_reasoning_token": 9e-06,
+        "output_cost_per_token": 9e-06,
+        "output_cost_per_video_token": 1.75e-05,
+        "source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/omni-flash-preview",
+        "supported_endpoints": [
+            "/v1/chat/completions"
+        ],
+        "supported_modalities": [
+            "text",
+            "image",
+            "audio",
+            "video"
+        ],
+        "supported_output_modalities": [
+            "text",
+            "video"
+        ],
+        "supports_audio_input": true,
+        "supports_reasoning": true,
+        "supports_system_messages": true,
+        "supports_video_input": true,
+        "supports_vision": true
+    },
     "gemini-pro-latest": {
         "cache_read_input_token_cost": 1.25e-07,
         "cache_read_input_token_cost_above_200k_tokens": 2.5e-07,
@@ -26069,6 +26117,39 @@
             "search_context_size_high": 0.035
         },
         "gemini_native_audio": true
+    },
+    "gemini/gemini-omni-flash-preview": {
+        "input_cost_per_audio_token": 1.5e-06,
+        "input_cost_per_token": 1.5e-06,
+        "litellm_provider": "gemini",
+        "max_input_tokens": 1048576,
+        "max_output_tokens": 65535,
+        "max_tokens": 65535,
+        "mode": "chat",
+        "output_cost_per_reasoning_token": 9e-06,
+        "output_cost_per_token": 9e-06,
+        "output_cost_per_video_token": 1.75e-05,
+        "rpm": 2000,
+        "source": "https://ai.google.dev/gemini-api/docs/pricing",
+        "supported_endpoints": [
+            "/v1/chat/completions"
+        ],
+        "supported_modalities": [
+            "text",
+            "image",
+            "audio",
+            "video"
+        ],
+        "supported_output_modalities": [
+            "text",
+            "video"
+        ],
+        "supports_audio_input": true,
+        "supports_reasoning": true,
+        "supports_system_messages": true,
+        "supports_video_input": true,
+        "supports_vision": true,
+        "tpm": 800000
     },
     "gemini/gemini-pro-latest": {
         "cache_read_input_token_cost": 1.25e-07,
@@ -42362,6 +42443,14 @@
         "mode": "chat",
         "source": "https://www.together.ai/models/seedance-2-0"
     },
+    "together_ai/Prism-ML/Ternary-Bonsai-27B": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/prism-ml-ternary-bonsai-27b",
+        "max_tokens": 262000,
+        "max_input_tokens": 262000,
+        "max_output_tokens": 262000
+    },
     "together_ai/Qwen/Qwen2.5-72B-Instruct-Turbo": {
         "litellm_provider": "together_ai",
         "mode": "chat",
@@ -42786,11 +42875,6 @@
         "max_tokens": 1000,
         "max_input_tokens": 1000,
         "max_output_tokens": 1000
-    },
-    "together_ai/nvidia/parakeet-tdt-0.6b-v3": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/parakeet-tdt-0-6b-v3"
     },
     "together_ai/nvidia/parakeet-tdt-0.6b-v3-realtime": {
         "litellm_provider": "together_ai",
