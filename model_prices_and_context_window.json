@@ -14557,6 +14557,16 @@
         "supports_function_calling": true,
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/Qwen/Qwen3-ASR-0.6B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Qwen/Qwen3-ASR-1.7B": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Qwen/Qwen3-Coder-480B-A35B-Instruct": {
         "max_tokens": 262144,
         "max_input_tokens": 262144,
@@ -15646,6 +15656,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/thenlper/gte-large": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/thinkingmachines/Inkling": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
