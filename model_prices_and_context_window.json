@@ -18425,6 +18425,15 @@
         "supports_tool_choice": true,
         "supports_vision": true
     },
+    "fireworks_ai/accounts/fireworks/models/ling-3-flash": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/ling-3-flash",
+        "max_tokens": 256000,
+        "max_input_tokens": 256000,
+        "max_output_tokens": 256000,
+        "supports_function_calling": true
+    },
     "fireworks_ai/accounts/fireworks/models/llama-guard-2-8b": {
         "max_tokens": 8192,
         "max_input_tokens": 8192,
@@ -21410,6 +21419,15 @@
         "supports_response_schema": true,
         "supports_tool_choice": true,
         "supports_vision": true
+    },
+    "fireworks_ai/ling-3-flash": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/ling-3-flash",
+        "max_tokens": 256000,
+        "max_input_tokens": 256000,
+        "max_output_tokens": 256000,
+        "supports_function_calling": true
     },
     "fireworks_ai/llama-guard-2-8b": {
         "litellm_provider": "fireworks_ai",
