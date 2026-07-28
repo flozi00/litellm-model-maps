@@ -14981,6 +14981,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/anthropic/claude-opus-5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/anthropic/claude-sonnet-4-6": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -18449,6 +18454,9 @@
         "max_tokens": 1040000,
         "max_input_tokens": 1040000,
         "max_output_tokens": 1040000,
+        "input_cost_per_token": 1e-06,
+        "cache_read_input_token_cost": 1.7000000000000001e-07,
+        "output_cost_per_token": 4.05e-06,
         "supports_function_calling": true
     },
     "fireworks_ai/accounts/fireworks/models/internvl3-38b": {
@@ -18606,6 +18614,18 @@
         "supports_response_schema": true,
         "supports_tool_choice": true,
         "supports_vision": true
+    },
+    "fireworks_ai/accounts/fireworks/models/kimi-k3": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/kimi-k3",
+        "max_tokens": 1040000,
+        "max_input_tokens": 1040000,
+        "max_output_tokens": 1040000,
+        "input_cost_per_token": 3e-06,
+        "cache_read_input_token_cost": 3e-07,
+        "output_cost_per_token": 1.5e-05,
+        "supports_function_calling": true
     },
     "fireworks_ai/accounts/fireworks/models/ling-3-flash": {
         "litellm_provider": "fireworks_ai",
@@ -21446,6 +21466,9 @@
         "max_tokens": 1040000,
         "max_input_tokens": 1040000,
         "max_output_tokens": 1040000,
+        "input_cost_per_token": 1e-06,
+        "cache_read_input_token_cost": 1.7000000000000001e-07,
+        "output_cost_per_token": 4.05e-06,
         "supports_function_calling": true
     },
     "fireworks_ai/internvl3-38b": {
@@ -21601,6 +21624,18 @@
         "supports_response_schema": true,
         "supports_tool_choice": true,
         "supports_vision": true
+    },
+    "fireworks_ai/kimi-k3": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/kimi-k3",
+        "max_tokens": 1040000,
+        "max_input_tokens": 1040000,
+        "max_output_tokens": 1040000,
+        "input_cost_per_token": 3e-06,
+        "cache_read_input_token_cost": 3e-07,
+        "output_cost_per_token": 1.5e-05,
+        "supports_function_calling": true
     },
     "fireworks_ai/ling-3-flash": {
         "litellm_provider": "fireworks_ai",
@@ -43407,14 +43442,6 @@
         "max_input_tokens": 256000,
         "max_output_tokens": 256000
     },
-    "together_ai/kimi-k3": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/kimi-k3",
-        "max_tokens": 1000,
-        "max_input_tokens": 1000,
-        "max_output_tokens": 1000
-    },
     "together_ai/meta-llama/Llama-3.2-3B-Instruct-Turbo": {
         "litellm_provider": "together_ai",
         "mode": "chat",
@@ -43569,6 +43596,14 @@
         "max_tokens": 256000,
         "max_input_tokens": 256000,
         "max_output_tokens": 256000
+    },
+    "together_ai/moonshotai/Kimi-K3": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/kimi-k3",
+        "max_tokens": 1000,
+        "max_input_tokens": 1000,
+        "max_output_tokens": 1000
     },
     "together_ai/nvidia/nemotron-3-asr-streaming-0.6b": {
         "litellm_provider": "together_ai",
