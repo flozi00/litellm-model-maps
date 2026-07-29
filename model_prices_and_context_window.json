@@ -15302,6 +15302,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/google/gemma-4-31B-it-Ultra": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/google/gemma-4-31B-it-turbo": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -15711,6 +15716,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/openai/gpt-oss-120b-Turbo": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/openai/gpt-oss-120b-Ultra": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
