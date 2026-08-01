@@ -15205,6 +15205,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/deepseek-ai/DeepSeek-V4-Flash-0731": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/deepseek-ai/DeepSeek-V4-Pro": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -15339,6 +15344,21 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/google/gemma-4-E4B-it": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/nano-banana-2": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/nano-banana-2-lite": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/google/nano-banana-pro": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -15844,6 +15864,11 @@
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/thinkingmachines/Inkling": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/thinkingmachines/Inkling-Small": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -18494,6 +18519,14 @@
         "cache_read_input_token_cost": 1.7000000000000001e-07,
         "output_cost_per_token": 4.05e-06,
         "supports_function_calling": true
+    },
+    "fireworks_ai/accounts/fireworks/models/inkling-small": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/inkling-small",
+        "max_tokens": 1040000,
+        "max_input_tokens": 1040000,
+        "max_output_tokens": 1040000
     },
     "fireworks_ai/accounts/fireworks/models/internvl3-38b": {
         "max_tokens": 16384,
@@ -21506,6 +21539,14 @@
         "cache_read_input_token_cost": 1.7000000000000001e-07,
         "output_cost_per_token": 4.05e-06,
         "supports_function_calling": true
+    },
+    "fireworks_ai/inkling-small": {
+        "litellm_provider": "fireworks_ai",
+        "mode": "chat",
+        "source": "https://fireworks.ai/models/fireworks/inkling-small",
+        "max_tokens": 1040000,
+        "max_input_tokens": 1040000,
+        "max_output_tokens": 1040000
     },
     "fireworks_ai/internvl3-38b": {
         "litellm_provider": "fireworks_ai",
