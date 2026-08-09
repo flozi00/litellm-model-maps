@@ -15688,6 +15688,11 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/moonshotai/Kimi-K3": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/nvidia/Cosmos3-Nano": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
@@ -43417,11 +43422,6 @@
         "mode": "chat",
         "source": "https://www.together.ai/models/seedance-2-0"
     },
-    "together_ai/ByteDance/Seedance-2.5": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/seedance-2-5"
-    },
     "together_ai/LiquidAI/LFM2.5-8B-A1B": {
         "litellm_provider": "together_ai",
         "mode": "chat",
@@ -43885,6 +43885,11 @@
         "max_tokens": 1000,
         "max_input_tokens": 1000,
         "max_output_tokens": 1000
+    },
+    "together_ai/seedance-2-5": {
+        "litellm_provider": "together_ai",
+        "mode": "chat",
+        "source": "https://www.together.ai/models/seedance-2-5"
     },
     "together_ai/thinkingmachines/Inkling": {
         "litellm_provider": "together_ai",
