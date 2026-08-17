@@ -45412,13 +45412,13 @@
         "max_input_tokens": 512000,
         "max_output_tokens": 512000
     },
-    "together_ai/deepseek-v4-pro-0813": {
+    "together_ai/deepseek-ai/DeepSeek-V4-Pro-0813": {
         "litellm_provider": "together_ai",
         "mode": "chat",
         "source": "https://www.together.ai/models/deepseek-v4-pro-0813",
-        "max_tokens": 512000,
-        "max_input_tokens": 512000,
-        "max_output_tokens": 512000
+        "max_tokens": 1000,
+        "max_input_tokens": 1000,
+        "max_output_tokens": 1000
     },
     "together_ai/glm-5-3": {
         "litellm_provider": "together_ai",
