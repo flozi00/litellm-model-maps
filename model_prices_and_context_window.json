@@ -18936,7 +18936,17 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/Bria/fibo-1.5": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/Bria/fibo_edit": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/Bria/fibo_edit-1.5": {
         "litellm_provider": "deepinfra",
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
@@ -19546,6 +19556,11 @@
         "supports_reasoning": true,
         "supports_vision": true,
         "source": "https://deepinfra.com/pricing"
+    },
+    "deepinfra/Qwen/Qwen3.8-Flash": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
     },
     "deepinfra/Qwen/Qwen3.8-Max": {
         "max_tokens": 256000,
@@ -27574,7 +27589,10 @@
     "fireworks_ai/ernie-4p5-300b-a47b-pt": {
         "litellm_provider": "fireworks_ai",
         "mode": "chat",
-        "source": "https://fireworks.ai/models/fireworks/ernie-4p5-300b-a47b-pt"
+        "source": "https://fireworks.ai/models/fireworks/ernie-4p5-300b-a47b-pt",
+        "max_tokens": 131000,
+        "max_input_tokens": 131000,
+        "max_output_tokens": 131000
     },
     "fireworks_ai/fare-20b": {
         "litellm_provider": "fireworks_ai",
@@ -59570,6 +59588,11 @@
         "mode": "chat",
         "source": "https://www.together.ai/models/seedance-2-5"
     },
+    "together_ai/MiniMaxAI/MiniMax-H3": {
+        "litellm_provider": "together_ai",
+        "mode": "image_generation",
+        "source": "https://www.together.ai/models/minimax-h3"
+    },
     "together_ai/MiniMaxAI/MiniMax-M2.7": {
         "input_cost_per_token": 3e-07,
         "output_cost_per_token": 1.2e-06,
@@ -59833,11 +59856,6 @@
         "output_cost_per_token": 4.7e-07,
         "source": "https://docs.together.ai/docs/serverless-models",
         "max_output_tokens": 1000
-    },
-    "together_ai/Wan-AI/Wan2.6-image": {
-        "litellm_provider": "together_ai",
-        "mode": "image_generation",
-        "source": "https://www.together.ai/models/wan-2-6-image"
     },
     "together_ai/arize-ai/qwen-2-1.5b-instruct": {
         "input_cost_per_token": 1e-07,
