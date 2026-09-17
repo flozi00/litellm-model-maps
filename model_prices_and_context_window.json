@@ -59857,6 +59857,11 @@
         "source": "https://docs.together.ai/docs/serverless-models",
         "max_output_tokens": 1000
     },
+    "together_ai/Wan-AI/Wan2.6-image": {
+        "litellm_provider": "together_ai",
+        "mode": "image_generation",
+        "source": "https://www.together.ai/models/wan-2-6-image"
+    },
     "together_ai/arize-ai/qwen-2-1.5b-instruct": {
         "input_cost_per_token": 1e-07,
         "litellm_provider": "together_ai",
@@ -60422,8 +60427,7 @@
         "mode": "chat",
         "output_cost_per_token": 1.2e-06,
         "source": "https://docs.together.ai/docs/serverless-models",
-        "supports_prompt_caching": true,
-        "max_output_tokens": 1000
+        "supports_prompt_caching": true
     },
     "together_ai/togethercomputer/CodeLlama-34b-Instruct": {
         "litellm_provider": "together_ai",
