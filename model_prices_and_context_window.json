@@ -60051,14 +60051,6 @@
         "output_vector_size": 1024,
         "source": "https://docs.together.ai/docs/serverless-models"
     },
-    "together_ai/liquid-lfm2-5-8b-a1b": {
-        "litellm_provider": "together_ai",
-        "mode": "chat",
-        "source": "https://www.together.ai/models/liquid-lfm2-5-8b-a1b",
-        "max_tokens": 128000,
-        "max_input_tokens": 128000,
-        "max_output_tokens": 128000
-    },
     "together_ai/meta-llama/Llama-3.2-3B-Instruct-Turbo": {
         "deprecation_date": "2026-03-06",
         "litellm_provider": "together_ai",
