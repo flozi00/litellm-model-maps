@@ -20740,16 +20740,6 @@
         "supports_vision": true,
         "source": "https://deepinfra.com/pricing"
     },
-    "deepinfra/nvidia/Cosmos3-Nano": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
-    "deepinfra/nvidia/Cosmos3-Super": {
-        "litellm_provider": "deepinfra",
-        "mode": "chat",
-        "source": "https://api.deepinfra.com/v1/openai/models"
-    },
     "deepinfra/nvidia/Llama-3.1-Nemotron-70B-Instruct": {
         "max_tokens": 131072,
         "max_input_tokens": 131072,
