@@ -19676,6 +19676,16 @@
         "mode": "chat",
         "source": "https://api.deepinfra.com/v1/openai/models"
     },
+    "deepinfra/XiaomiMiMo/MiMo-V2.6-Flash": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
+    "deepinfra/XiaomiMiMo/MiMo-V2.6-Pro": {
+        "litellm_provider": "deepinfra",
+        "mode": "chat",
+        "source": "https://api.deepinfra.com/v1/openai/models"
+    },
     "deepinfra/allenai/olmOCR-7B-0725-FP8": {
         "max_tokens": 16384,
         "max_input_tokens": 16384,
